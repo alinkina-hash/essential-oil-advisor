@@ -1,0 +1,193 @@
+{
+  "intro": "Ссылки на источники, из которых собраны данные по применению, дозировке и безопасности масел в этом справочнике. Раздел 3 — в основном результаты веб-поиска (сниппеты), а не полностью прочитанные страницы; это ориентировочный список для прозрачности, а не строгая библиография.",
+  "sections": [
+    {
+      "title": "1. Каталог doTERRA (57 масел + 20 смесей + общие правила безопасности)",
+      "groups": [
+        {
+          "label": "Официальные страницы doTERRA (прочитаны полностью)",
+          "links": [
+            { "url": "https://www.doterra.com/US/en/essential-oil-safety", "note": "разведения, «горячие» масла, фотосенсибилизация, беременность/дети/животные/приём внутрь" },
+            { "url": "https://www.doterra.com/US/en/blog/spotlight-master-list-of-essential-oils", "note": "базовый список масел и их применения" },
+            { "url": "https://www.doterra.com/US/en/product-education-single-oils", "note": "индекс страниц по единичным маслам" }
+          ]
+        },
+        {
+          "label": "Отдельные масла",
+          "links": [
+            { "url": "https://www.doterra.com/US/en/p/doterra-turmeric-essential-oil", "note": "Куркума" },
+            { "url": "https://www.doterra.com/US/en/blog/spotlight-turmeric-oil", "note": "Куркума" },
+            { "url": "https://www.doterra.com/US/en/p/doterra-green-mandarin", "note": "Зелёный мандарин" },
+            { "url": "https://www.doterra.com/US/en/litsea-oil", "note": "Литсея" },
+            { "url": "https://www.doterra.com/US/en/education/pe/doterra-pink-pepper", "note": "Розовый перец" },
+            { "url": "https://www.doterra.com/US/en/hojas-informativas-de-productos", "note": "испанский каталог — подтверждение Dill = «Eneldo»" }
+          ]
+        },
+        {
+          "label": "Составы смесей — официальные страницы doTERRA",
+          "text": "On Guard, Breathe, Balance, AromaTouch, Deep Blue, DigestZen — через страницы AromaTouch Technique и product education на doterra.com."
+        },
+        {
+          "label": "Составы смесей, дополненные сторонними источниками (официальный PDF не читался как текст)",
+          "links": [
+            { "url": "https://lovingessentialoils.com/a/blog/doterra-essential-oil-blends", "note": "Серенити, Мотивейт, Чир, Консоль, ИнТюн, Форгив, Пэшн" },
+            { "url": "https://lovingessentialoils.com/a/blog/elevation-essential-oil-blend-ingredients", "note": "Элевейшн" },
+            { "url": "https://incidecoder.com/products/doterra-hd-clear-topical-blend", "note": "HD Clear" }
+          ]
+        }
+      ],
+      "caveat": "Для Whisper, Citrus Bliss, Purify, Elevation, Zendocrine, HD Clear официальные PDF doTERRA не всегда открывались как читаемый текст — составы смесей собраны с опорой на сторонние источники наравне с сайтом doTERRA."
+    },
+    {
+      "title": "2. Kundalini Aroma (Пало Санто, Шалфей, Чампака)",
+      "groups": [
+        {
+          "label": "",
+          "links": [
+            { "url": "https://www.aromaweb.com/essential-oils/palo-santo-essential-oil.php", "note": "Пало Санто" },
+            { "url": "https://www.edenbotanicals.com/palo-santo.html", "note": "Пало Санто" },
+            { "url": "https://ecuadorianhands.com/en/blog/post/palo-santo-oil-uses-and-benefits.html", "note": "Пало Санто" },
+            { "url": "https://www.sourcevital.com/products/palo-santo-essential-oil", "note": "Пало Санто" },
+            { "url": "https://aromathera.org/the-ultimate-guide-to-champaca-essential-oil-benefits-and-uses/", "note": "Чампака" },
+            { "url": "https://www.floramedicalglobal.com/blog/champaka-complete-guide", "note": "Чампака" },
+            { "url": "https://www.webmd.com/vitamins/ai/ingredientmono-504/sage", "note": "Шалфей — безопасность" },
+            { "url": "https://www.nccih.nih.gov/health/sage", "note": "Шалфей — безопасность (NCCIH, NIH)" },
+            { "url": "https://www.edensgarden.com/blogs/news/is-clary-sage-essential-oil-safe-for-pregnancy", "note": "Шалфей мускатный при беременности" },
+            { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3809930/", "note": "безопасность обыкновенного шалфея" }
+          ]
+        }
+      ],
+      "caveat": "У бренда Kundalini Aroma нет собственного проверяемого веб-присутствия, поэтому источники — по самим растениям, не по бренду."
+    },
+    {
+      "title": "3. Дополнительные растения от Светланы Калмыковой (не из каталога doTERRA)",
+      "groups": [
+        { "label": "Аир (Calamus)", "links": [
+          { "url": "https://www.sciencedirect.com/science/article/abs/pii/S0308814610010551", "note": "бета-азарон в составе масла" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9789137/", "note": "удаление бета-азарона, хемотипы" },
+          { "url": "https://www.mdpi.com/2305-6304/13/12/1006", "note": "классификация GHS 1B / раздражитель категории 2" },
+          { "url": "http://greensashet.ru/air/", "note": "применение и противопоказания (рус.)" }
+        ]},
+        { "label": "Пижма обыкновенная (Common Tansy)", "links": [
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10457739/", "note": "химический состав, % туйона" },
+          { "url": "https://www.herbalreality.com/herb/tansy/", "note": "токсичность, только наружно" },
+          { "url": "https://www.inchem.org/documents/jecfa/jecmono/v16je25.htm", "note": "токсикология туйона (WHO/JECFA)" },
+          { "url": "https://www.drugs.com/npp/tansy.html", "note": "предупреждение о приёме внутрь" },
+          { "url": "https://ilavahemp.com/blue-tansy-essential-oil/", "note": "для сравнения с безопасной голубой пижмой" }
+        ]},
+        { "label": "Полынь горькая (Wormwood)", "links": [
+          { "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13209449/", "note": "хемотипы с низким туйоном" },
+          { "url": "https://www.herbalreality.com/herb/wormwood/", "note": "«не рекомендуется для ароматерапии»" },
+          { "url": "https://www.webmd.com/vitamins-supplements/wormwood", "note": "общий обзор токсичности" },
+          { "url": "https://www.drugs.com/npp/wormwood.html", "note": "дозировка/противопоказания" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7345338/", "note": "фармакология, токсичность для ЦНС/ЖКТ" },
+          { "url": "https://acibademinternational.com/health-library/wormwood-explained-by-medical-evidence-not-myths/", "note": "обзор по медицинским данным" }
+        ]},
+        { "label": "Пустырник (Motherwort)", "links": [
+          { "url": "https://www.herbalreality.com/herb/motherwort/", "note": "профиль традиционного применения" },
+          { "url": "https://essentialherbs.com/pages/motherwort-leonurus-cardiaca", "note": "источник наблюдения «ЭМ производится крайне редко»" }
+        ], "note": "Русскоязычных источников именно по эфирному маслу не найдено — опора на англоязычные травнические источники." },
+        { "label": "Тысячелистник (Yarrow)", "links": [
+          { "url": "https://www.aromaticstudies.com/yarrow-essential-oil-achillea-millefolium/", "note": "свойства, традиционное применение" },
+          { "url": "https://www.tisserand.com/essential-oils/yarrow-essential-oil/", "note": "безопасность" },
+          { "url": "https://www.aromaweb.com/essential-oils/yarrow-essential-oil.php", "note": "разведение, беременность" },
+          { "url": "https://tisserandinstitute.org/learn-more/safety-maximum-dermal/", "note": "дермальный максимум (~4,5%)" },
+          { "url": "https://dr-lobisco.com/the-many-benefits-of-yarrow-achillea-millefolium-essential-oil-ep-399/", "note": "оральный максимум, взаимодействие с CYP2D6" }
+        ]},
+        { "label": "Ним (Neem)", "links": [
+          { "url": "https://aliksir.com/en/products/neem-azadirachta-indica-virgin-plant-oil", "note": "это carrier-масло, не ЭМ" },
+          { "url": "https://theplantrunner.com/blogs/the-plant-runner-blog/which-neem-oil-is-best-for-plants", "note": "холодный отжим, азадирахтин" }
+        ]},
+        { "label": "Морковь / семена моркови (Carrot Seed)", "links": [
+          { "url": "https://www.aromaweb.com/essential-oils/carrot-seed-essential-oil.php", "note": "% разведения, беременность" },
+          { "url": "https://en.wikipedia.org/wiki/Carrot_seed_oil", "note": "паровая дистилляция, общий профиль" },
+          { "url": "https://www.planttherapy.com/blogs/blog/carrot-seed-essential-oil-spotlight-week", "note": "пропорции для диффузора" }
+        ]},
+        { "label": "Мускатный орех (Nutmeg)", "links": [
+          { "url": "https://spice.alibaba.com/spice-basics/nutmeg-oil", "note": "% миристицина, дозировка" },
+          { "url": "https://www.ncbi.nlm.nih.gov/books/NBK556998/", "note": "токсичность миристицина (NTP)" },
+          { "url": "https://www.researchgate.net/publication/278850055_Toxicity_of_Nutmeg_Myristicin_A_Review", "note": "токсичная доза, симптомы" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10273060/", "note": "состав: миристицин/сафрол/элемицин" }
+        ]},
+        { "label": "Петрушка / семена петрушки (Parsley Seed)", "links": [
+          { "url": "https://www.aromaweb.com/essential-oils/parsley-essential-oil.php", "note": "апиол/миристицин, дермальный максимум 1,1%" },
+          { "url": "https://motherfigure.com/pregnancy-lactation/parsley-carum-petroselinum/", "note": "абортивное действие, беременность" },
+          { "url": "https://reference.medscape.com/drug/petroselinum-crispum-parsley-344574", "note": "гепато-/нефротоксичность, взаимодействия" }
+        ]},
+        { "label": "Витекс (Vitex)", "links": [
+          { "url": "https://mountainroseherbs.com/vitex-essential-oil", "note": "подтверждение существования ЭМ" },
+          { "url": "https://mountainroseherbs.com/vitex-extract", "note": "для сравнения с экстрактом" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469960/", "note": "острая токсичность, состав ЭМ" },
+          { "url": "https://nascentnaturals.com/products/vitex-10-essential-oil", "note": "ориентир по разведению 4%" },
+          { "url": "https://heloa.app/en/blog/pregnancy/health/essential-oils-pregnancy-safety", "note": "общая безопасность ЭМ при беременности" }
+        ]},
+        { "label": "Ваниль (Vanilla)", "links": [
+          { "url": "https://www.aromaweb.com/essential-oils/vanilla-absolute-co2-extract.php", "note": "нет настоящего ЭМ — абсолю vs CO2-экстракт" },
+          { "url": "https://www.edensgarden.com/blogs/news/whats-the-difference-between-vanilla-co2-vanilla-aboslute", "note": "сравнение методов экстракции" },
+          { "url": "https://www.aromatherapyandmassage.com/vanilla-essential-oil.html", "note": "«Vanilla Essential Oil Is a Myth»" },
+          { "url": "https://www.schoolofessentria.com/blog/vanilla", "note": "подтверждение «это не ЭМ»" }
+        ]},
+        { "label": "Абсолют Фукуса (Fucus/Bladderwrack)", "links": [
+          { "url": "https://www.edenbotanicals.com/seaweed-absolute.html", "note": "абсолют vs ЭМ, концентрация" },
+          { "url": "https://www.natureinbottle.com/product/seaweed_absolute", "note": "аромат, традиционное применение" },
+          { "url": "https://en.wikipedia.org/wiki/Fucus_vesiculosus", "note": "ботанический фон" },
+          { "url": "https://en.wikipedia.org/wiki/Absolute_(perfumery)", "note": "общий фон об абсолю" }
+        ]},
+        { "label": "Лимонный эвкалипт (Lemon Eucalyptus)", "links": [
+          { "url": "https://www.murphysnaturals.com/blogs/journal/what-is-oil-of-lemon-eucalyptus", "note": "OLE/PMD vs обычное ЭМ" },
+          { "url": "https://www.lemoneucalyptusoil.com/articles/what-is-oil-of-lemon-eucalyptus-ole-pmd-and-the-essential/", "note": "содержание PMD" },
+          { "url": "https://pestcontrolbasics.com/pesticide-oil-of-lemon-eucalyptus.html", "note": "рекомендации CDC, возрастное ограничение" },
+          { "url": "https://www.beyondpesticides.org/assets/media/documents/pesticides/factsheets/oillemoneucalyptus.pdf", "note": "регуляторный фон (PDF)" }
+        ]},
+        { "label": "Лимонная полынь", "links": [
+          { "url": "https://blog-travushka.ru/товар/polyn-limonnaya-abrotan", "note": "идентификация растения (Artemisia balchanorum)" },
+          { "url": "https://aromatnauki.ru/products/artemisia-balchanorum", "note": "коммерческая позиция, подтверждение латинского названия" },
+          { "url": "http://aromaved.ru/efirnye-masla/efirnoe-maslo-polyni.html", "note": "общий обзор масел рода Artemisia" }
+        ]},
+        { "label": "Дуб (Oak)", "links": [
+          { "url": "https://www.edenbotanicals.com/oakwood-absolute-67.html", "note": "дубовый абсолют — реальный коммерческий продукт" },
+          { "url": "https://mountainroseherbs.com/oakwood-absolute", "note": "подтверждение" },
+          { "url": "https://momprepares.com/essential-oils/oakmoss/", "note": "различие дуб / дубовый мох (oakmoss)" }
+        ]},
+        { "label": "Ива (Willow)", "links": [
+          { "url": "https://www.sciencedirect.com/topics/medicine-and-dentistry/salix-extract", "note": "экстракт коры, не ЭМ; салицин" },
+          { "url": "https://www.fragrantica.com/notes/White-Willow-852.html", "note": "ива как парфюмерная нота" },
+          { "url": "https://www.newdirectionsaromatics.com/products/white-willow-bark-botanical-extract", "note": "коммерческий продукт — экстракт коры" }
+        ]},
+        { "label": "Фрагония (Fragonia)", "links": [
+          { "url": "https://aliksir.com/en/products/fragonia-agonis-fragrans-essential-oil", "note": "происхождение, состав" },
+          { "url": "https://www.aromaweb.com/essential-oils/fragonia-essential-oil.php", "note": "свойства, применение" },
+          { "url": "https://www.edensgarden.com/products/fragonia-essential-oil", "note": "разведение 1-3%" },
+          { "url": "https://www.stillpointaromatics.com/fragonia-agonis-fragrans-essential-oil-aromatherapy", "note": "хранение, окисление" }
+        ]},
+        { "label": "Сельдерей / семена сельдерея (Celery Seed)", "links": [
+          { "url": "https://kiaromashop.ca/products/celery-seed-essential-oil", "note": "разведение 1-3% / 3-5%" },
+          { "url": "https://www.huiles-et-sens.com/en/337-celery-seed-essential-oil.html", "note": "фототоксичность" },
+          { "url": "https://www.florihana.com/us/essential-oils/647-celeri-semence.html", "note": "общая безопасность" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11270010/", "note": "оценка безопасности как пищевой добавки" }
+        ]},
+        { "label": "Тмин — Carum carvi (тмин обыкновенный)", "links": [
+          { "url": "https://aliksir.com/en/caraway-carum-carvi-essential-oil.html", "note": "свойства, отхаркивающее применение" },
+          { "url": "https://simplyherbalist.com/caraway-essential-oil-benefits-uses-and-how-to-use-it-safely/", "note": "нейротоксический/абортивный риск" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11289620/", "note": "раздражитель/сенсибилизатор, дермальный максимум <1,2%" }
+        ]},
+        { "label": "Тмин — Cuminum cyminum (кумин/зира, для сравнения)", "links": [
+          { "url": "https://oshadhi.co.uk/cumin-essential-oil/", "note": "общий профиль" },
+          { "url": "https://achs.edu/blog/what-is-photosensitivity-with-essential-oils/", "note": "механизм фототоксичности" },
+          { "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9762120/", "note": "дермальный максимум 0,4% (Tisserand & Young)" },
+          { "url": "https://www.botanical-online.com/en/medicinal-plants/cumin-toxicity", "note": "токсичность в высоких дозах" }
+        ]},
+        { "label": "«Тмин» vs «зира/кумин» — разграничение терминов в русском языке", "links": [
+          { "url": "https://spice.alibaba.com/ru/spice-basics/caraway-seeds-vs-cumin-seeds", "note": "историческое смешение терминов" },
+          { "url": "https://hixon.ru/o-zhizni/zira-kumin-tmin-koriandr-odno-i-tozhe-ili-net.html", "note": "разграничение Carum carvi / Cuminum cyminum" }
+        ]}
+      ]
+    },
+    {
+      "title": "4. Личные заметки Светланы Калмыковой",
+      "groups": [
+        { "label": "Не веб-источник — предоставлено пользователем напрямую", "text": "«Эфирные масла в женском антипаразитарном курсе.pdf» и «Эфирные масла для женского здоровья.pdf». Текст воспроизведён в data/raw/kalmykova_notes.json близко к оригиналу, без додумывания оборванных фрагментов." }
+      ]
+    }
+  ]
+}

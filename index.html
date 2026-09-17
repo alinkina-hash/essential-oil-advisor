@@ -1,0 +1,974 @@
+<title>Атлас ароматов</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#F2F4EC;
+    --surface:#FCFBF6;
+    --surface-2:#EDEFE4;
+    --ink:#23261E;
+    --ink-soft:#5B6152;
+    --line:#DBDECE;
+    --accent:#5B7052;
+    --accent-ink:#2E3B29;
+    --accent-soft:#E2E8D8;
+    --amber:#A9662E;
+    --amber-soft:#F1DFC6;
+    --warn:#A6402F;
+    --warn-soft:#F4DCD3;
+    --blog:#7C5A8C;
+    --blog-soft:#EBE1EE;
+    --focus:#3D6BD1;
+    --shadow: 0 1px 2px rgba(35,38,30,0.06), 0 6px 20px rgba(35,38,30,0.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#181A13;
+      --surface:#212418;
+      --surface-2:#282C1C;
+      --ink:#E9E8DC;
+      --ink-soft:#AEB29E;
+      --line:#3A3E2C;
+      --accent:#97B285;
+      --accent-ink:#D9E6CE;
+      --accent-soft:#2C331F;
+      --amber:#E0A360;
+      --amber-soft:#3A2C1A;
+      --warn:#E4877A;
+      --warn-soft:#3C221D;
+      --blog:#CBA3D8;
+      --blog-soft:#362A3D;
+      --focus:#8AAAF2;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#181A13;
+    --surface:#212418;
+    --surface-2:#282C1C;
+    --ink:#E9E8DC;
+    --ink-soft:#AEB29E;
+    --line:#3A3E2C;
+    --accent:#97B285;
+    --accent-ink:#D9E6CE;
+    --accent-soft:#2C331F;
+    --amber:#E0A360;
+    --amber-soft:#3A2C1A;
+    --warn:#E4877A;
+    --warn-soft:#3C221D;
+    --blog:#CBA3D8;
+    --blog-soft:#362A3D;
+    --focus:#8AAAF2;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Karla',system-ui,-apple-system,sans-serif;
+    line-height:1.45;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .latin{
+    font-family:'Fraunces',Georgia,serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink-soft);
+  }
+  .mono{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  button{ font-family:inherit; }
+  a{ color:inherit; }
+  :focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:28px 20px 64px;
+  }
+
+  header.top{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:18px;
+  }
+  header.top .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  header.top h1{
+    font-size:clamp(28px,4vw,38px);
+  }
+  header.top p.sub{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    max-width:60ch;
+    margin:2px 0 0;
+  }
+
+  .disclaimer{
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 14px;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:16px 0 22px;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .disclaimer button{
+    background:none;
+    border:none;
+    color:var(--accent);
+    text-decoration:underline;
+    cursor:pointer;
+    padding:0;
+    font-size:13px;
+    flex-shrink:0;
+  }
+  .disclaimer .full{
+    margin-top:8px;
+    color:var(--ink-soft);
+  }
+  .disclaimer[hidden]{ display:none; }
+
+  .controls{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:18px;
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    padding:10px 0 12px;
+    z-index:5;
+  }
+  .search-row{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  input[type="search"]{
+    flex:1;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:11px 14px;
+    font-size:15px;
+    color:var(--ink);
+  }
+  input[type="search"]::placeholder{ color:var(--ink-soft); }
+
+  .stock-toggle{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:9px 12px;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size:14px;
+    user-select:none;
+  }
+  .stock-toggle .box{
+    width:16px;height:16px;
+    border-radius:4px;
+    border:1.5px solid var(--ink-soft);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .stock-toggle.on .box{ background:var(--amber); border-color:var(--amber); }
+  .stock-toggle.on .box::after{ content:"✓"; color:var(--surface); font-size:11px; line-height:1;}
+  .stock-toggle.on{ border-color:var(--amber); color:var(--amber); }
+
+  .chips{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .chip{
+    background:var(--surface);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    border-radius:999px;
+    padding:6px 13px;
+    font-size:13px;
+    cursor:pointer;
+  }
+  .chip.active{
+    background:var(--accent-soft);
+    border-color:var(--accent);
+    color:var(--accent-ink);
+    font-weight:600;
+  }
+  .sub-chips{
+    margin-top:2px;
+    padding-left:14px;
+    border-left:2px solid var(--blog-soft);
+  }
+  .chip.sub{
+    font-size:12px;
+    padding:5px 11px;
+    border-color:var(--blog-soft);
+  }
+  .chip.sub.active{
+    background:var(--blog-soft);
+    border-color:var(--blog);
+    color:var(--blog);
+  }
+
+  .count-line{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:14px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 15px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    box-shadow:var(--shadow);
+  }
+  .card.caution{ border-left:3px solid var(--warn); }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+  }
+  .brand-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .stock-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--amber);
+    flex-shrink:0;
+    margin-top:5px;
+  }
+  .card h3{ font-size:17px; }
+  .card .latin{ font-size:12.5px; }
+  .card .props{
+    font-size:13px;
+    color:var(--ink-soft);
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .tag-row{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-top:auto;
+  }
+  .tag-pill{
+    font-size:11px;
+    background:var(--accent-soft);
+    color:var(--accent-ink);
+    border-radius:999px;
+    padding:3px 9px;
+  }
+  .warn-pill{
+    font-size:11px;
+    background:var(--warn-soft);
+    color:var(--warn);
+    border-radius:999px;
+    padding:3px 9px;
+    font-weight:600;
+  }
+  .blog-pill{
+    font-size:11px;
+    background:var(--blog-soft);
+    color:var(--blog);
+    border-radius:999px;
+    padding:3px 9px;
+    font-weight:600;
+  }
+
+  .empty{
+    color:var(--ink-soft);
+    padding:40px 10px;
+    text-align:center;
+  }
+
+  /* Detail view */
+  .detail{
+    max-width:620px;
+  }
+  .back-btn{
+    background:none;
+    border:none;
+    color:var(--accent);
+    font-size:14px;
+    cursor:pointer;
+    padding:0 0 16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .detail-head .brand-tag{ margin-bottom:6px; }
+  .detail-head h2{ font-size:30px; }
+  .detail-head .latin{ font-size:15px; display:block; margin-top:2px; }
+  .stock-line{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    color:var(--amber);
+    background:var(--amber-soft);
+    border-radius:999px;
+    padding:4px 11px;
+    margin-top:10px;
+  }
+  .stock-line .stock-dot{ margin-top:0; }
+
+  .section{
+    border-top:1px solid var(--line);
+    padding:18px 0;
+  }
+  .section .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    display:block;
+  }
+  .section p{ margin:0; font-size:15px; }
+
+  .safety-box{
+    background:var(--warn-soft);
+    border:1px solid var(--warn);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-top:18px;
+  }
+  .safety-box .eyebrow{ color:var(--warn); }
+  .safety-box p{ color:var(--ink); font-size:14.5px; }
+
+  .blog-box{
+    background:var(--blog-soft);
+    border:1px solid var(--blog);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-top:18px;
+  }
+  .blog-box .eyebrow{ color:var(--blog); }
+  .blog-box blockquote{
+    margin:0 0 10px;
+    padding-left:12px;
+    border-left:2px solid var(--blog);
+    font-size:14.5px;
+    color:var(--ink);
+    font-style:italic;
+  }
+  .blog-box blockquote:last-child{ margin-bottom:0; }
+  .blog-box .source-line{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:10px;
+    font-style:normal;
+  }
+
+  .blend-of{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-top:4px;
+  }
+  .blend-chip{
+    font-size:12.5px;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:5px 10px;
+    cursor:pointer;
+  }
+  .blend-chip.static{ cursor:default; color:var(--ink-soft); }
+
+  /* Safety reference view */
+  .safety-view h2{ font-size:26px; margin-bottom:4px; }
+  .safety-view .lead{ color:var(--ink-soft); font-size:14px; margin-bottom:18px; }
+  .safety-block{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .safety-block h3{ font-size:15px; margin-bottom:8px; }
+  .safety-block p{ margin:0; font-size:14.5px; color:var(--ink); }
+  .safety-block .oils-list{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--amber);
+    margin-bottom:8px;
+    display:block;
+  }
+  .safety-block a{ color:var(--accent); text-decoration:underline; word-break:break-all; }
+  .safety-block.blog{ border-color:var(--blog); }
+  .safety-block.blog h3{ color:var(--blog); }
+  .safety-block ul{ margin:0; padding-left:18px; }
+  .safety-block li{ margin-bottom:6px; font-size:14.5px; }
+  .source-banner{
+    background:var(--blog-soft);
+    border:1px solid var(--blog);
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:13px;
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  .source-banner b{ color:var(--blog); }
+  .top-link{
+    background:none;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:7px 14px;
+    font-size:13px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .nav-row{ display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; margin-bottom:4px; }
+
+  @media (max-width:520px){
+    .search-row{ flex-direction:column; align-items:stretch; }
+    .stock-toggle{ justify-content:center; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Личный справочник · doTERRA &amp; Kundalini Aroma</span>
+    <h1>Атлас ароматов</h1>
+    <p class="sub">Поиск масла по запросу или симптому, способы применения, разведение и меры предосторожности — на основе твоей коллекции и полного каталога doTERRA.</p>
+  </header>
+
+  <div class="disclaimer" id="disclaimer">
+    <span>ℹ️</span>
+    <div style="flex:1">
+      Справочный материал для личного использования, собранный из открытых источников — это не медицинская консультация.
+      <button id="disclaimerToggle" type="button">подробнее</button>
+      <div class="full" id="disclaimerFull" hidden></div>
+    </div>
+  </div>
+
+  <div id="app"></div>
+</div>
+
+<script src="data/oils_data.js"></script>
+<script>
+(function(){
+  const FALLBACK_NAMES = {
+    'spruce':'Ель','ravintsara':'Равинтсара','laurel-leaf':'Лавр','camphor':'Камфора',
+    'caraway':'Тмин','star-anise':'Бадьян','lemon-myrtle':'Лимонный мирт','nutmeg':'Мускатный орех',
+    'vanilla':'Ваниль','labdanum':'Лабданум','amyris':'Амирис','lavandin':'Лавандин',
+    'yuzu':'Юдзу','citronella':'Цитронелла','black-cumin':'Чёрный тмин','ho-wood':'Хо-дерево',
+    'damiana':'Дамиана'
+  };
+
+  const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
+  const oils = OILS_DATA.oils;
+  const safety = OILS_DATA.general_safety;
+  const kalmykova = OILS_DATA.kalmykova_notes;
+  const sourcesData = OILS_DATA.sources;
+  const byId = Object.fromEntries(oils.map(o=>[o.id,o]));
+  const hotIds = new Set(safety.hot_oils_always_dilute.oils);
+  const photoIds = new Set(safety.photosensitive_citrus_oils.oils);
+
+  const allTags = Array.from(new Set(oils.flatMap(o=>o.tags||[])))
+    .sort((a,b)=>a.localeCompare(b,'ru'))
+    .sort((a,b)=> (a==='гормоны'?-1:0) - (b==='гормоны'?-1:0)); // «Гормоны» — особая сквозная категория, всегда первым чипом
+
+  const hormoneSubs = [...kalmykova.hormones.map(h=>h.hormone), kalmykova.fertility.title];
+
+  function matchesTag(o){
+    if(state.tag==='all') return true;
+    if(!(o.tags||[]).includes(state.tag)) return false;
+    if(state.tag==='гормоны' && state.hormoneSub!=='all'){
+      return (o.hormone_notes_kalmykova||[]).some(hn=>hn.hormone===state.hormoneSub);
+    }
+    return true;
+  }
+
+  const app = document.getElementById('app');
+
+  document.getElementById('disclaimerToggle').addEventListener('click', function(){
+    const full = document.getElementById('disclaimerFull');
+    const hidden = full.hasAttribute('hidden');
+    if(hidden){ full.removeAttribute('hidden'); full.textContent = safety.general_disclaimer; this.textContent='свернуть'; }
+    else{ full.setAttribute('hidden',''); this.textContent='подробнее'; }
+  });
+
+  function isCaution(o){
+    if(o.type==='single') return hotIds.has(o.id) || photoIds.has(o.id);
+    return (o.blend_of||[]).some(id=>hotIds.has(id)||photoIds.has(id));
+  }
+  function cautionBadges(o){
+    const ids = o.type==='single' ? [o.id] : (o.blend_of||[]);
+    const hot = ids.some(id=>hotIds.has(id));
+    const photo = ids.some(id=>photoIds.has(id));
+    const out=[];
+    if(hot) out.push('<span class="warn-pill">разводить сильно</span>');
+    if(photo) out.push('<span class="warn-pill">фоточувствит.</span>');
+    return out.join('');
+  }
+  function ingredientName(id){
+    return byId[id] ? byId[id].name_ru : (FALLBACK_NAMES[id] || id);
+  }
+
+  function matchesSearch(o,q){
+    if(!q) return true;
+    q=q.toLowerCase();
+    const hay=[o.name_ru,o.name_en,o.latin,(o.tags||[]).join(' '),o.properties].join(' ').toLowerCase();
+    return hay.includes(q);
+  }
+
+  function renderControls(){
+    return `
+      <div class="controls">
+        <div class="search-row">
+          <input type="search" id="searchInput" placeholder="Например: сон, лаванда, головная боль..." value="${escapeAttr(state.query)}">
+          <div class="stock-toggle ${state.onlyStock?'on':''}" id="stockToggle"><span class="box"></span> Только мои масла</div>
+        </div>
+        <div class="chips" id="chips">
+          <button class="chip ${state.tag==='all'?'active':''}" data-tag="all">Все</button>
+          ${allTags.map(t=>`<button class="chip ${state.tag===t?'active':''}" data-tag="${t}">${t}</button>`).join('')}
+        </div>
+        ${state.tag==='гормоны' ? `
+        <div class="chips sub-chips" id="hormoneChips">
+          <button class="chip sub ${state.hormoneSub==='all'?'active':''}" data-hormone="all">Все гормоны</button>
+          ${hormoneSubs.map(h=>`<button class="chip sub ${state.hormoneSub===h?'active':''}" data-hormone="${escapeAttr(h)}">${h}</button>`).join('')}
+        </div>` : ''}
+      </div>`;
+  }
+
+  function escapeAttr(s){ return String(s).replace(/"/g,'&quot;'); }
+
+  function cardHTML(o){
+    return `
+      <button class="card ${isCaution(o)?'caution':''}" data-id="${o.id}">
+        <div class="card-top">
+          <span class="brand-tag">${o.brand}</span>
+          ${o.in_stock?'<span class="stock-dot" title="Есть в наличии"></span>':''}
+        </div>
+        <h3>${o.name_ru}</h3>
+        <span class="latin">${o.latin}</span>
+        <p class="props">${o.properties}</p>
+        <div class="tag-row">
+          ${(o.tags||[]).slice(0,3).map(t=>`<span class="tag-pill">${t}</span>`).join('')}
+          ${cautionBadges(o)}
+          ${(o.notes_kalmykova || o.hormone_notes_kalmykova || o.protocol_notes_kalmykova || o.general_application_kalmykova)?'<span class="blog-pill">заметка травницы</span>':''}
+        </div>
+      </button>
+    `;
+  }
+
+  function renderGrid(){
+    const filtered = oils.filter(o=>
+      matchesSearch(o,state.query) &&
+      matchesTag(o) &&
+      (!state.onlyStock || o.in_stock)
+    );
+    const cards = filtered.map(cardHTML).join('');
+
+    return `
+      <div class="nav-row">
+        <button class="top-link" id="openSources">Источники →</button>
+        <button class="top-link" id="openBlog">Заметки травницы →</button>
+        <button class="top-link" id="openSafety">Общие правила безопасности →</button>
+      </div>
+      ${renderControls()}
+      <p class="count-line">${filtered.length} ${pluralOils(filtered.length)}${state.onlyStock?' в твоей коллекции':' в каталоге'}</p>
+      <div class="grid">${cards || ''}</div>
+      ${filtered.length===0?'<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>':''}
+    `;
+  }
+
+  function pluralOils(n){
+    const mod10=n%10, mod100=n%100;
+    if(mod10===1 && mod100!==11) return 'масло';
+    if([2,3,4].includes(mod10) && ![12,13,14].includes(mod100)) return 'масла';
+    return 'масел';
+  }
+
+  function renderDetail(id){
+    const o = byId[id];
+    const blendRow = o.type==='blend' ? `
+      <div class="section" style="border-top:none;padding-top:0;">
+        <span class="eyebrow">Состав смеси</span>
+        <div class="blend-of">
+          ${(o.blend_of||[]).map(bid=> byId[bid]
+            ? `<button class="blend-chip" data-id="${bid}">${ingredientName(bid)}</button>`
+            : `<span class="blend-chip static">${ingredientName(bid)}</span>`
+          ).join('')}
+        </div>
+      </div>` : '';
+
+    return `
+      <div class="detail">
+        <button class="back-btn" id="backBtn">← Назад к каталогу</button>
+        <div class="detail-head">
+          <span class="brand-tag">${o.brand}</span>
+          <h2>${o.name_ru}<span class="latin">${o.latin}</span></h2>
+          <div class="tag-row" style="margin-top:10px;">
+            ${(o.tags||[]).map(t=>`<span class="tag-pill">${t}</span>`).join('')}
+          </div>
+          ${o.in_stock?'<div class="stock-line"><span class="stock-dot"></span> Есть в твоей коллекции</div>':''}
+        </div>
+
+        ${o.not_a_typical_eo ? `
+        <div class="safety-block" style="margin-top:16px;">
+          <h3>Важно про этот продукт</h3>
+          <p>${o.sourcing_note || ''}</p>
+        </div>` : ''}
+
+        ${blendRow}
+
+        <div class="section">
+          <span class="eyebrow">Свойства</span>
+          <p>${o.properties}</p>
+        </div>
+        <div class="section">
+          <span class="eyebrow">Ароматически</span>
+          <p>${o.aromatic_use}</p>
+        </div>
+        <div class="section">
+          <span class="eyebrow">На кожу</span>
+          <p>${o.topical_use}</p>
+        </div>
+        <div class="section">
+          <span class="eyebrow">Внутрь</span>
+          <p>${o.internal_use}</p>
+        </div>
+
+        <div class="safety-box">
+          <span class="eyebrow">Меры предосторожности</span>
+          <p>${o.safety_notes}</p>
+        </div>
+
+        ${(o.notes_kalmykova || o.hormone_notes_kalmykova || o.protocol_notes_kalmykova || o.general_application_kalmykova) ? `
+        <div class="blog-box">
+          <span class="eyebrow">Заметка травницы (Светлана Калмыкова)</span>
+          ${(o.notes_kalmykova||[]).map(q=>`<blockquote>${q}</blockquote>`).join('')}
+          ${(o.hormone_notes_kalmykova||[]).map(hn=>`<blockquote><b>${hn.hormone}:</b> ${hn.text}</blockquote>`).join('')}
+          ${(o.protocol_notes_kalmykova||[]).map(t=>`<blockquote>${t}</blockquote>`).join('')}
+          ${o.general_application_kalmykova ? `
+          <p style="margin-top:12px;font-weight:600;font-size:13.5px;">${o.general_application_kalmykova.title}</p>
+          <ul style="margin:6px 0 0;padding-left:18px;font-size:13.5px;">
+            ${o.general_application_kalmykova.items.map(i=>`<li style="margin-bottom:5px;">${i}</li>`).join('')}
+          </ul>` : ''}
+          <p class="source-line">Личный опыт из материалов блога, не официальная позиция doTERRA и не научные данные. Подробнее — в разделе «Заметки травницы».</p>
+        </div>` : ''}
+      </div>
+    `;
+  }
+
+  function renderSafety(){
+    const s = safety;
+    return `
+      <div class="detail safety-view">
+        <button class="back-btn" id="backBtn">← Назад к каталогу</button>
+        <h2>Общие правила безопасности</h2>
+        <p class="lead">Свод базовых правил doTERRA и общепринятой ароматерапии. Не заменяет консультацию врача.</p>
+
+        <div class="safety-block">
+          <h3>Разведение с базовым маслом</h3>
+          <p><b>Взрослые, стандартно:</b> ${s.dilution_ratios.adults_general}</p>
+          <p style="margin-top:8px;"><b>Сильные масла / первое применение:</b> ${s.dilution_ratios.adults_strong_or_first_use}</p>
+          <p style="margin-top:8px;"><b>Чувствительная кожа, лицо:</b> ${s.dilution_ratios.sensitive_skin_face}</p>
+          <p style="margin-top:8px;"><b>Дети:</b> ${s.dilution_ratios.children}</p>
+          <p style="margin-top:8px;"><b>Питомцы:</b> ${s.dilution_ratios.pets}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>«Горячие» масла — всегда разводить</h3>
+          <span class="oils-list">${s.hot_oils_always_dilute.oils.map(ingredientName).join(' · ')}</span>
+          <p>${s.hot_oils_always_dilute.note}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>Фоточувствительные цитрусовые</h3>
+          <span class="oils-list">${s.photosensitive_citrus_oils.oils.map(ingredientName).join(' · ')}</span>
+          <p>${s.photosensitive_citrus_oils.note}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>Беременность и грудное вскармливание</h3>
+          <p>${s.pregnancy_and_breastfeeding}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>Дети</h3>
+          <p>${s.children_general}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>Домашние животные</h3>
+          <p>${s.pets_general}</p>
+        </div>
+
+        <div class="safety-block">
+          <h3>Приём внутрь</h3>
+          <p>${s.internal_use_general}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  function oilChips(ids){
+    return (ids||[]).map(id=> byId[id]
+      ? `<button class="blend-chip" data-id="${id}">${byId[id].name_ru}</button>`
+      : ''
+    ).join('');
+  }
+
+  function hormoneBlock(h){
+    return `
+      <div class="safety-block blog">
+        <h3>${h.hormone}</h3>
+        ${h.intro?`<p style="margin-bottom:10px;">${h.intro}</p>`:''}
+        <ul>
+          ${h.items.map(it=>`<li>${it.text}${it.oils && it.oils.length ? `<div class="blend-of" style="margin-top:6px;">${oilChips(it.oils)}</div>` : ''}</li>`).join('')}
+        </ul>
+        ${h.note?`<p class="source-line" style="margin-top:10px;">${h.note}</p>`:''}
+      </div>`;
+  }
+
+  function renderBlogNotes(){
+    const k = kalmykova;
+    const ap = k.antiparasitic_protocol;
+    return `
+      <div class="detail safety-view">
+        <button class="back-btn" id="backBtn">← Назад к каталогу</button>
+        <h2>Заметки травницы</h2>
+        <p class="lead">${k.source_label} — из PDF-материалов её курсов.</p>
+        <div class="source-banner"><b>Важно:</b> ${k.disclaimer}</div>
+
+        <div class="safety-block blog">
+          <h3>${k.application_methods_general.title}</h3>
+          <p style="margin-bottom:10px;">${k.application_methods_general.intro}</p>
+          <ul>${k.application_methods_general.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+        </div>
+
+        <div class="safety-block blog">
+          <h3>${k.fertility.title} <span style="font-weight:400;color:var(--ink-soft);font-size:13px;">(${k.fertility.citation})</span></h3>
+          <p>${k.fertility.text}</p>
+          <div class="blend-of" style="margin-top:10px;">${oilChips(k.fertility.oils_mentioned)}</div>
+        </div>
+
+        <h3 style="margin:26px 0 4px;">Гормоны и эфирные масла</h3>
+        ${k.hormones.map(hormoneBlock).join('')}
+
+        <h3 style="margin:26px 0 4px;">${ap.title}</h3>
+
+        <div class="safety-block blog">
+          <h3>${ap.oiling_general.title}</h3>
+          <ul>${ap.oiling_general.benefits.map(b=>`<li>${b}</li>`).join('')}</ul>
+          <p>${ap.oiling_general.how}</p>
+          <p class="source-line">Варианты приёма: ${ap.oiling_general.timing_options.join(' · ')}</p>
+          <span class="oils-list" style="margin-top:10px;">${ap.oiling_general.best_carrier_oils.join(' · ')}</span>
+          <p class="source-line">${ap.oiling_general.note}</p>
+        </div>
+
+        <div class="safety-block blog">
+          <h3>${ap.oiling_antiparasitic.title}</h3>
+          <p>${ap.oiling_antiparasitic.description}</p>
+          <p class="source-line" style="margin-top:8px;">Упомянутые бренды пищевых эфирных масел: ${ap.oiling_antiparasitic.food_grade_eo_brands_mentioned.join(', ')}. ${ap.oiling_antiparasitic.brands_note}</p>
+          <p style="margin-top:10px;">${ap.oiling_antiparasitic.mechanism}</p>
+          <p style="margin-top:8px;">${ap.oiling_antiparasitic.how}</p>
+          <span class="oils-list" style="margin-top:8px;">${ap.oiling_antiparasitic.best_oils_for_navel.join(' · ')}</span>
+          <div class="blend-of">${oilChips(ap.oiling_antiparasitic.best_oils_for_navel_ids)}</div>
+        </div>
+
+        <div class="safety-block blog">
+          <h3>${ap.mouth_rinse.title}</h3>
+          <p>${ap.mouth_rinse.context}</p>
+
+          <p style="margin-top:12px;"><b>${ap.mouth_rinse.variant_1_antiparasitic.title}</b></p>
+          <p>${ap.mouth_rinse.variant_1_antiparasitic.recipe}</p>
+          <ul>${ap.mouth_rinse.variant_1_antiparasitic.carrier_oil_choice.map(c=>`<li>${c}</li>`).join('')}</ul>
+          <p>${ap.mouth_rinse.variant_1_antiparasitic.how}</p>
+          <p class="source-line">${ap.mouth_rinse.variant_1_antiparasitic.storage}</p>
+
+          <p style="margin-top:14px;"><b>${ap.mouth_rinse.variant_2_base_oil_only.title}</b></p>
+          <p>${ap.mouth_rinse.variant_2_base_oil_only.controversy}</p>
+          <span class="oils-list">${ap.mouth_rinse.variant_2_base_oil_only.base_oils.join(' · ')}</span>
+          <p>${ap.mouth_rinse.variant_2_base_oil_only.how}</p>
+
+          <p style="margin-top:14px;"><b>${ap.mouth_rinse.variant_3_base_plus_essential.title}</b></p>
+          <span class="oils-list">Базовые: ${ap.mouth_rinse.variant_3_base_plus_essential.base_oils.join(' · ')}</span>
+          <span class="oils-list">Эфирные: ${ap.mouth_rinse.variant_3_base_plus_essential.essential_oils.join(' · ')}</span>
+          <div class="blend-of">${oilChips(ap.mouth_rinse.variant_3_base_plus_essential.essential_oils_ids)}</div>
+          <p style="margin-top:8px;">${ap.mouth_rinse.variant_3_base_plus_essential.how}</p>
+          <p class="source-line">${ap.mouth_rinse.variant_3_base_plus_essential.important}</p>
+        </div>
+
+        <div class="safety-block blog">
+          <h3>${ap.genital_area_protocol.title}</h3>
+          <p><b>${ap.genital_area_protocol.seabuckthorn_recipe.title}</b></p>
+          <p>${ap.genital_area_protocol.seabuckthorn_recipe.recipe}</p>
+          <p>${ap.genital_area_protocol.seabuckthorn_recipe.how}</p>
+          <p class="source-line">${ap.genital_area_protocol.seabuckthorn_recipe.note}</p>
+          <p style="margin-top:12px;">${ap.genital_area_protocol.essential_oil_variant.how}</p>
+          <p class="source-line">${ap.genital_area_protocol.essential_oil_variant.dilution_note}</p>
+          <p style="margin-top:10px;">${ap.genital_area_protocol.when_effective}</p>
+        </div>
+
+        <div class="safety-block blog">
+          <h3>${ap.antiparasitic_oils_list.title}</h3>
+          <span class="oils-list">${ap.antiparasitic_oils_list.oils.join(' · ')}</span>
+          <div class="blend-of">${oilChips(ap.antiparasitic_oils_list.matched_ids)}</div>
+          <p class="source-line" style="margin-top:8px;">${ap.antiparasitic_oils_list.unmatched_note}</p>
+        </div>
+
+        <p class="source-line" style="margin-top:8px;">${ap.personal_notes_unmatched_oils.note}</p>
+      </div>
+    `;
+  }
+
+  function linkList(links){
+    return `<ul>${(links||[]).map(l=>`<li><a href="${l.url}" target="_blank" rel="noopener">${l.url.replace(/^https?:\/\//,'')}</a> — ${l.note}</li>`).join('')}</ul>`;
+  }
+
+  function sourceGroup(g){
+    return `
+      ${g.label?`<p style="margin:14px 0 6px;font-weight:600;">${g.label}</p>`:''}
+      ${g.text?`<p>${g.text}</p>`:''}
+      ${g.links?linkList(g.links):''}
+      ${g.note?`<p class="source-line">${g.note}</p>`:''}
+    `;
+  }
+
+  function renderSourcesPage(){
+    return `
+      <div class="detail safety-view">
+        <button class="back-btn" id="backBtn">← Назад к каталогу</button>
+        <h2>Источники</h2>
+        <p class="lead">${sourcesData.intro}</p>
+        ${sourcesData.sections.map(sec=>`
+          <div class="safety-block">
+            <h3>${sec.title}</h3>
+            ${(sec.groups||[]).map(sourceGroup).join('')}
+            ${sec.caveat?`<p class="source-line" style="margin-top:10px;">${sec.caveat}</p>`:''}
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  function render(){
+    if(state.view==='detail'){ app.innerHTML = renderDetail(state.activeId); }
+    else if(state.view==='safety'){ app.innerHTML = renderSafety(); }
+    else if(state.view==='blog'){ app.innerHTML = renderBlogNotes(); }
+    else if(state.view==='sources'){ app.innerHTML = renderSourcesPage(); }
+    else { app.innerHTML = renderGrid(); }
+    window.scrollTo(0,0);
+    bind();
+  }
+
+  function bind(){
+    const search = document.getElementById('searchInput');
+    if(search){
+      search.addEventListener('input', e=>{ state.query = e.target.value; renderGridInPlace(); });
+    }
+    const stockToggle = document.getElementById('stockToggle');
+    if(stockToggle){
+      stockToggle.addEventListener('click', ()=>{ state.onlyStock = !state.onlyStock; render(); });
+    }
+    const chips = document.getElementById('chips');
+    if(chips){
+      chips.addEventListener('click', e=>{
+        const btn = e.target.closest('.chip');
+        if(!btn) return;
+        state.tag = btn.dataset.tag;
+        state.hormoneSub = 'all';
+        render();
+      });
+    }
+    const hormoneChips = document.getElementById('hormoneChips');
+    if(hormoneChips){
+      hormoneChips.addEventListener('click', e=>{
+        const btn = e.target.closest('.chip');
+        if(!btn) return;
+        state.hormoneSub = btn.dataset.hormone;
+        render();
+      });
+    }
+    document.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('click', ()=>{ state.view='detail'; state.activeId=c.dataset.id; render(); });
+    });
+    const openSafety = document.getElementById('openSafety');
+    if(openSafety) openSafety.addEventListener('click', ()=>{ state.view='safety'; render(); });
+    const openBlog = document.getElementById('openBlog');
+    if(openBlog) openBlog.addEventListener('click', ()=>{ state.view='blog'; render(); });
+    const openSources = document.getElementById('openSources');
+    if(openSources) openSources.addEventListener('click', ()=>{ state.view='sources'; render(); });
+    const back = document.getElementById('backBtn');
+    if(back) back.addEventListener('click', ()=>{ state.view='grid'; render(); });
+    document.querySelectorAll('.blend-chip[data-id]').forEach(c=>{
+      c.addEventListener('click', ()=>{ state.view='detail'; state.activeId=c.dataset.id; render(); });
+    });
+  }
+
+  // re-render only the grid+count (keeps focus in search input while typing)
+  function renderGridInPlace(){
+    const filtered = oils.filter(o=>
+      matchesSearch(o,state.query) &&
+      matchesTag(o) &&
+      (!state.onlyStock || o.in_stock)
+    );
+    const countEl = document.querySelector('.count-line');
+    const gridEl = document.querySelector('.grid');
+    if(countEl) countEl.textContent = `${filtered.length} ${pluralOils(filtered.length)}${state.onlyStock?' в твоей коллекции':' в каталоге'}`;
+    if(gridEl){
+      gridEl.innerHTML = filtered.map(cardHTML).join('');
+      document.querySelectorAll('.card').forEach(c=>{
+        c.addEventListener('click', ()=>{ state.view='detail'; state.activeId=c.dataset.id; render(); });
+      });
+      const empty = document.querySelector('.empty');
+      if(filtered.length===0 && !empty){
+        gridEl.insertAdjacentHTML('afterend','<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>');
+      } else if(filtered.length>0 && empty){
+        empty.remove();
+      }
+    }
+  }
+
+  render();
+})();
+</script>
