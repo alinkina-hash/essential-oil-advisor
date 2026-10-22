@@ -1,5 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>Атлас ароматов</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -313,7 +314,11 @@
   .catalog-divider{
     border:none;
     border-top:1px solid var(--line);
-    margin:40px 0 48px;
+    width:100vw;
+    margin-top:40px;
+    margin-bottom:48px;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
   }
   .catalog-title{
     text-align:center;
@@ -719,14 +724,30 @@
 
   @media (max-width:520px){
     .search-row{ flex-direction:column; align-items:stretch; }
-    .stock-toggle{ justify-content:center; }
+    .grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+    .card-name{ font-size:13px; }
+    .card .latin{ font-size:12px; }
+    .card .props{ font-size:12.5px; -webkit-line-clamp:3; }
+    .tag-pill, .warn-pill, .blog-pill{ font-size:11px; }
+    .card-bar{ font-size:11px; padding:10px; }
+    body{ font-size:15.5px; }
+    .faq-item summary{ font-size:15px; }
+    .faq-item .faq-answer{ font-size:14.5px; }
+    .safety-home-item p, .safety-home-item h3{ font-size:14.5px; }
   }
 
   /* ---- Safety summary (home) ---- */
   .safety-home{
     margin:64px 0;
+  }
+  .safety-home::before{
+    content:"";
+    display:block;
+    width:100vw;
     border-top:1px solid var(--line);
-    padding-top:36px;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    margin-bottom:36px;
   }
   .safety-home h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
   .safety-home-grid{
@@ -747,9 +768,16 @@
   /* ---- FAQ ---- */
   .faq-section{
     margin:64px 0;
-    border-top:1px solid var(--line);
-    padding-top:36px;
     scroll-margin-top:80px;
+  }
+  .faq-section::before{
+    content:"";
+    display:block;
+    width:100vw;
+    border-top:1px solid var(--line);
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    margin-bottom:36px;
   }
   .faq-section h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
   .faq-item{
@@ -781,7 +809,6 @@
     font-size:14px;
     color:var(--ink-soft);
     line-height:1.55;
-    max-width:70ch;
   }
 
   /* ---- Site footer ---- */
@@ -799,9 +826,10 @@
     gap:28px;
   }
   .footer-col h4{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    letter-spacing:0.07em;
+    font-family:'Karla',system-ui,sans-serif;
+    font-size:13.5px;
+    font-weight:400;
+    letter-spacing:0.03em;
     text-transform:uppercase;
     color:var(--ink-soft);
     margin-bottom:12px;
@@ -875,15 +903,15 @@
     <div class="footer-col">
       <h4>Справочник</h4>
       <ul>
+        <li><button type="button" data-footer-view="sources">Источники</button></li>
         <li><button type="button" data-footer-view="blog">Заметки травницы</button></li>
-        <li><button type="button" data-footer-view="safety">Правила безопасности</button></li>
-        <li><button type="button" data-footer-anchor="faq">Частые вопросы</button></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>О проекте</h4>
+      <h4>Важно знать</h4>
       <ul>
-        <li><button type="button" data-footer-view="sources">Источники</button></li>
+        <li><button type="button" data-footer-view="safety">Правила безопасности</button></li>
+        <li><button type="button" data-footer-anchor="faq">Частые вопросы</button></li>
       </ul>
     </div>
   </div>
@@ -997,7 +1025,7 @@
           <input type="search" id="searchInput" placeholder="Например: сон, лаванда, головная боль..." value="${escapeAttr(state.query)}">
         </div>
         <div class="chips" id="chips">
-          <button class="chip ${state.tag==='all'?'active':''}" data-tag="all">Все</button>
+          <button class="chip ${state.tag==='all'?'active':''}" data-tag="all">ВСЕ</button>
           ${allTags.map(t=>`<button class="chip ${state.tag===t?'active':''}" data-tag="${t}">${t}</button>`).join('')}
         </div>
         ${state.tag==='гормоны' ? `
@@ -1070,8 +1098,16 @@
             <p>${photo} — после нанесения избегать солнца 12+ часов.</p>
           </div>
           <div class="safety-home-item">
-            <h3>Беременность, дети, животные</h3>
-            <p>Обязательна консультация с врачом/педиатром/ветеринаром перед использованием.</p>
+            <h3>Приём внутрь</h3>
+            <p>Только масла с панелью Supplement Facts на этикетке. Максимум около 20 капель в сутки, начинать с 1–2, разведённых в воде или капсуле.</p>
+          </div>
+          <div class="safety-home-item">
+            <h3>Беременность и дети</h3>
+            <p>При беременности — консультация с врачом, избегать «горячих» масел и большинства масел для приёма внутрь. Детям — более сильное разведение, наносить на стопы, не на лицо.</p>
+          </div>
+          <div class="safety-home-item">
+            <h3>Животные</h3>
+            <p>Кошки особенно чувствительны к фенольным маслам (орегано, тимьян, гвоздика, грушанка) — не наносить неразведёнными. Перед применением — консультация с ветеринаром.</p>
           </div>
         </div>
         <p class="safety-home-more"><button class="top-link" id="openSafetyHome">Все правила безопасности →</button></p>
