@@ -686,6 +686,8 @@
   }
   .safety-block h3{ font-size:15px; margin-bottom:8px; }
   .safety-block p{ margin:0; font-size:14.5px; color:var(--ink); }
+  .safety-block p.disclaimer-text{ color:var(--ink-soft); }
+  .safety-block h3.source-section-title{ color:var(--amber); font-size:19px; }
   .safety-block .oils-list{
     font-family:'IBM Plex Mono',monospace;
     font-size:12.5px;
@@ -1158,7 +1160,7 @@
 
         ${(o.notes_kalmykova || o.hormone_notes_kalmykova || o.protocol_notes_kalmykova || o.general_application_kalmykova) ? `
         <div class="blog-box">
-          <span class="eyebrow">Заметка травницы (Светлана Калмыкова)</span>
+          <span class="eyebrow">Заметка травницы</span>
           ${(o.notes_kalmykova||[]).map(q=>`<blockquote>${q}</blockquote>`).join('')}
           ${(o.hormone_notes_kalmykova||[]).map(hn=>`<blockquote><b>${hn.hormone}:</b> ${hn.text}</blockquote>`).join('')}
           ${(o.protocol_notes_kalmykova||[]).map(t=>`<blockquote>${t}</blockquote>`).join('')}
@@ -1368,11 +1370,11 @@
         <p class="lead">${sourcesData.intro}</p>
         <div class="safety-block">
           <h3>Дисклеймер</h3>
-          <p>${safety.general_disclaimer}</p>
+          <p class="disclaimer-text">${safety.general_disclaimer}</p>
         </div>
         ${sourcesData.sections.map(sec=>`
           <div class="safety-block">
-            <h3>${sec.title}</h3>
+            <h3 class="source-section-title">${sec.title}</h3>
             ${(sec.groups||[]).map(sourceGroup).join('')}
             ${sec.caveat?`<p class="source-line" style="margin-top:10px;">${sec.caveat}</p>`:''}
           </div>

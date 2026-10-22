@@ -42,7 +42,7 @@ On Guard, Breathe, Balance, AromaTouch, Deep Blue, DigestZen — через ст
 
 *Примечание: у Kundalini Aroma нет собственного проверяемого веб-присутствия, поэтому источники — по самим растениям, не по бренду.*
 
-## 3. Дополнительные растения от Светланы Калмыковой (19 масел не из каталога doTERRA)
+## 3. Дополнительные растения от травницы (19 масел не из каталога doTERRA)
 
 **Аир (Calamus):** sciencedirect.com/science/article/abs/pii/S0308814610010551 · ncbi.nlm.nih.gov/pmc/articles/PMC9789137 · mdpi.com/2305-6304/13/12/1006 · greensashet.ru/air
 
@@ -83,7 +83,7 @@ On Guard, Breathe, Balance, AromaTouch, Deep Blue, DigestZen — через ст
 **Тмин — Carum carvi (тмин) и Cuminum cyminum (кумин/зира), для разграничения терминов:**
 aliksir.com/en/caraway-carum-carvi-essential-oil.html · simplyherbalist.com (Caraway safety) · ncbi.nlm.nih.gov/pmc/articles/PMC11289620 · oshadhi.co.uk/cumin-essential-oil · achs.edu (фотосенсибилизация) · ncbi.nlm.nih.gov/pmc/articles/PMC9762120 · botanical-online.com/en/medicinal-plants/cumin-toxicity · spice.alibaba.com/ru/spice-basics/caraway-seeds-vs-cumin-seeds · hixon.ru (зира/кумин/тмин/кориандр — одно и то же или нет)
 
-## 4. Личные заметки Светланы Калмыковой
+## 4. Личные заметки травницы
 
 Не веб-источник — два PDF-файла, предоставленные пользователем напрямую:
 - «Эфирные масла в женском антипаразитарном курсе.pdf»
