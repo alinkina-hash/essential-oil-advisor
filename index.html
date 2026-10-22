@@ -754,25 +754,25 @@
 
   /* ---- Safety summary (home) ---- */
   .safety-home{
-    margin:64px 0;
-  }
-  .safety-home::before{
-    content:"";
-    display:block;
     width:100vw;
-    border-top:1px solid var(--line);
+    margin:64px 0;
     margin-left:calc(50% - 50vw);
     margin-right:calc(50% - 50vw);
-    margin-bottom:36px;
+    padding:56px 32px;
+    background:#1F3D2B;
   }
-  .safety-home h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
+  .safety-home-inner{
+    max-width:900px;
+    margin:0 auto;
+  }
+  .safety-home h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; color:#fff; }
   .safety-home-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
   }
   .safety-home-item{
-    background:var(--surface);
+    background:#fff;
     border:1px solid var(--line);
     border-radius:4px;
     padding:16px 18px;
@@ -780,6 +780,8 @@
   .safety-home-item h3{ font-size:14px; margin-bottom:6px; color:var(--warn); }
   .safety-home-item p{ margin:0; font-size:13px; color:var(--ink-soft); }
   .safety-home-more{ text-align:center; margin-top:22px; }
+  .safety-home-more .top-link{ color:#fff; }
+  .safety-home-more .top-link:hover{ color:#fff; opacity:.8; }
 
   /* ---- FAQ ---- */
   .faq-section{
@@ -1099,6 +1101,7 @@
     const photo = safety.photosensitive_citrus_oils.oils.map(ingredientName).join(' · ');
     return `
       <section class="safety-home">
+       <div class="safety-home-inner">
         <h2>Ключевые правила безопасности</h2>
         <div class="safety-home-grid">
           <div class="safety-home-item">
@@ -1127,6 +1130,7 @@
           </div>
         </div>
         <p class="safety-home-more"><button class="top-link" id="openSafetyHome">Все правила безопасности →</button></p>
+       </div>
       </section>`;
   }
 
