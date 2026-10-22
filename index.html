@@ -168,11 +168,11 @@
     padding:0 24px;
   }
   .hero-copy-inner{
-    max-width:900px;
+    max-width:1100px;
     animation:heroFadeUp 1s ease-out both;
   }
   .hero-copy-inner h1{ white-space:nowrap; }
-  @media (max-width:860px){
+  @media (max-width:1100px){
     .hero-copy-inner h1{ white-space:normal; }
   }
   .hero-copy-inner .eyebrow{
@@ -182,7 +182,7 @@
     color:rgba(255,255,255,.78);
   }
   .hero-copy-inner h1{
-    font-size:clamp(34px,5.2vw,52px);
+    font-size:clamp(38px,6.2vw,64px);
     margin-top:10px;
     color:#fff;
   }
@@ -250,12 +250,13 @@
   .intro-section{
     padding:64px 32px;
     text-align:center;
-    background:#A9825A;
+    background:#8B6B45;
   }
   .intro-section p{
     max-width:720px;
     margin:0 auto;
     font-size:1.3rem;
+    font-weight:300;
     line-height:1.6;
     color:#fff;
     font-family:'Fraunces',Georgia,serif;
@@ -290,7 +291,7 @@
     gap:12px;
     margin-bottom:18px;
     position:sticky;
-    top:61px;
+    top:var(--nav-h, 61px);
     background:var(--bg);
     padding:10px 0 12px;
     z-index:5;
@@ -309,24 +310,15 @@
     font-size:15px;
     color:var(--ink);
   }
-  input[type="search"]::placeholder{ color:#a3a3a3; }
+  input[type="search"]::placeholder{ color:#a3a3a3; font-size:13px; }
 
-  .catalog-divider{
-    border:none;
-    border-top:1px solid var(--line);
-    width:100vw;
-    margin-top:0;
-    margin-bottom:48px;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-  }
   .catalog-title{
     text-align:center;
     font-family:'Fraunces',Georgia,serif;
     font-weight:400;
     font-size:clamp(26px,4vw,34px);
     letter-spacing:0.02em;
-    margin:8px 0 24px;
+    margin:48px 0 24px;
   }
   .stock-pills{
     display:flex;
@@ -1139,7 +1131,6 @@
     const cards = filtered.map(cardHTML).join('');
 
     return `
-      <hr class="catalog-divider">
       <h2 class="catalog-title">Каталог масел</h2>
       <div class="stock-pills">
         <button type="button" class="stock-pill ${state.onlyStock?'on':'off'}" data-stock="true"><span class="stock-dot" style="margin:0;"></span>Мои масла</button>
@@ -1540,6 +1531,18 @@
   bindNavLike(document.querySelector('.site-footer'));
   bindNavLike(document.querySelector('.site-nav'));
   bindNavLike(document.querySelector('.bottom-disclaimer'));
+
+  // Синхронизирует позицию прилипания фильтров каталога с реальной высотой
+  // верхнего меню (может меняться: перенос пунктов на мобильном, шрифты и т.п.) —
+  // без этого между меню и фильтрами при скролле видна щель с карточками.
+  function syncNavHeight(){
+    const nav = document.querySelector('.site-nav-wrap');
+    if(nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  window.addEventListener('load', syncNavHeight);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(syncNavHeight);
 
   const heroSearchForm = document.getElementById('heroSearchForm');
   if(heroSearchForm){
