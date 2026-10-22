@@ -1436,13 +1436,13 @@
     `;
   }
 
-  function render(){
+  function render(keepScroll){
     if(state.view==='detail'){ app.innerHTML = renderDetail(state.activeId); }
     else if(state.view==='safety'){ app.innerHTML = renderSafety(); }
     else if(state.view==='blog'){ app.innerHTML = renderBlogNotes(); }
     else if(state.view==='sources'){ app.innerHTML = renderSourcesPage(); }
     else { app.innerHTML = renderGrid(); }
-    window.scrollTo(0,0);
+    if(!keepScroll) window.scrollTo(0,0);
     bind();
   }
 
@@ -1452,7 +1452,7 @@
       search.addEventListener('input', e=>{ state.query = e.target.value; renderGridInPlace(); });
     }
     document.querySelectorAll('.stock-pill').forEach(btn=>{
-      btn.addEventListener('click', ()=>{ state.onlyStock = btn.dataset.stock === 'true'; render(); });
+      btn.addEventListener('click', ()=>{ state.onlyStock = btn.dataset.stock === 'true'; render(true); });
     });
     const chips = document.getElementById('chips');
     if(chips){
@@ -1461,7 +1461,7 @@
         if(!btn) return;
         state.tag = btn.dataset.tag;
         state.hormoneSub = 'all';
-        render();
+        render(true);
       });
     }
     const hormoneChips = document.getElementById('hormoneChips');
@@ -1470,7 +1470,7 @@
         const btn = e.target.closest('.chip');
         if(!btn) return;
         state.hormoneSub = btn.dataset.hormone;
-        render();
+        render(true);
       });
     }
     document.querySelectorAll('.card').forEach(c=>{
