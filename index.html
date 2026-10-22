@@ -118,10 +118,10 @@
   .site-nav .links{ justify-self:center; display:flex; gap:32px; flex-wrap:wrap; justify-content:center; }
   .site-nav .links .nav-link{
     font-family:'Karla',system-ui,sans-serif;
-    font-size:14.5px;
-    font-weight:500;
-    letter-spacing:normal;
-    text-transform:none;
+    font-size:13.5px;
+    font-weight:400;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
     color:var(--ink);
   }
   .site-nav .links .nav-link:hover{ color:var(--accent); }
@@ -310,6 +310,11 @@
   }
   input[type="search"]::placeholder{ color:var(--ink-soft); }
 
+  .catalog-divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:40px 0 48px;
+  }
   .catalog-title{
     text-align:center;
     font-family:'Fraunces',Georgia,serif;
@@ -744,6 +749,7 @@
     margin:64px 0;
     border-top:1px solid var(--line);
     padding-top:36px;
+    scroll-margin-top:80px;
   }
   .faq-section h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
   .faq-item{
@@ -827,6 +833,8 @@
     <button type="button" class="nav-link top-link" data-footer-view="grid">Каталог</button>
     <button type="button" class="nav-link top-link" data-footer-view="blog">Заметки травницы</button>
     <button type="button" class="nav-link top-link" data-footer-view="sources">Источники</button>
+    <button type="button" class="nav-link top-link" data-footer-view="safety">Правила безопасности</button>
+    <button type="button" class="nav-link top-link" data-footer-anchor="faq">Частые вопросы</button>
   </div>
   <div class="nav-right" aria-hidden="true"></div>
 </div></nav>
@@ -837,7 +845,7 @@
     <div class="hero-copy-inner">
       <span class="eyebrow">ЛИЧНЫЙ СПРАВОЧНИК</span>
       <h1>Эфирные масла для тела и дома</h1>
-      <p class="sub">Поиск по симптомам, способы применения, разведение и меры предосторожности — doTERRA, Kundalini Aroma и травяные заметки в одном месте.</p>
+      <p class="sub">Поиск по симптомам, способы применения, разведение и меры предосторожности — doTERRA, Kundalini Aroma и травяные заметки в одном месте</p>
       <form class="hero-search" id="heroSearchForm">
         <label for="heroSearch" style="position:absolute;left:-9999px;">Поиск по симптому или маслу</label>
         <input id="heroSearch" class="search-line" type="text" placeholder="Поиск по симптому или маслу">
@@ -848,7 +856,7 @@
 </div>
 
 <div class="intro-section">
-  <p>Не маркетинг, а справочник. Что помогает от чего, как развести и когда лучше не трогать — собрано в одном месте, без лишнего.</p>
+  <p>Что помогает от чего, как развести и когда лучше не трогать — собрано в одном месте, без лишнего</p>
 </div>
 
 <div class="wrap">
@@ -1095,6 +1103,7 @@
     const cards = filtered.map(cardHTML).join('');
 
     return `
+      <hr class="catalog-divider">
       <h2 class="catalog-title">Каталог масел</h2>
       <div class="stock-pills">
         <button type="button" class="stock-pill ${state.onlyStock?'on':'off'}" data-stock="true"><span class="stock-dot" style="margin:0;"></span>Мои масла</button>
