@@ -782,7 +782,7 @@
   .faq-section{
     margin-top:32px;
     margin-bottom:24px;
-    scroll-margin-top:80px;
+    scroll-margin-top:calc(var(--sticky-h, 160px) + 16px);
   }
   .faq-section h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
   .faq-item{
@@ -1502,6 +1502,7 @@
     document.querySelectorAll('.blend-chip[data-id]').forEach(c=>{
       c.addEventListener('click', ()=>{ state.view='detail'; state.activeId=c.dataset.id; render(); });
     });
+    syncNavHeight();
   }
 
   // re-render only the grid+count (keeps focus in search input while typing)
@@ -1553,10 +1554,16 @@
 
   // Синхронизирует позицию прилипания фильтров каталога с реальной высотой
   // верхнего меню (может меняться: перенос пунктов на мобильном, шрифты и т.п.) —
-  // без этого между меню и фильтрами при скролле видна щель с карточками.
+  // без этого между меню и фильтрами при скролле видна щель с карточками. Заодно
+  // считает суммарную высоту меню+фильтров (--sticky-h) для scroll-margin-top
+  // у якорных секций (FAQ), иначе прыжок по ссылке прячет заголовок под ними.
   function syncNavHeight(){
     const nav = document.querySelector('.site-nav-wrap');
-    if(nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    const navH = nav ? nav.offsetHeight : 0;
+    document.documentElement.style.setProperty('--nav-h', navH + 'px');
+    const controls = document.querySelector('.controls');
+    const controlsH = controls ? controls.offsetHeight : 0;
+    document.documentElement.style.setProperty('--sticky-h', (navH + controlsH) + 'px');
   }
   syncNavHeight();
   window.addEventListener('resize', syncNavHeight);
