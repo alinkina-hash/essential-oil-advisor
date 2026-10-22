@@ -741,8 +741,6 @@
     .tag-pill, .warn-pill, .blog-pill{ font-size:11px; }
     .card-bar{ font-size:11px; padding:10px; }
     body{ font-size:15.5px; }
-    .faq-item summary{ font-size:15px; }
-    .faq-item .faq-answer{ font-size:14.5px; }
     .safety-home-item p, .safety-home-item h3{ font-size:14.5px; }
   }
 
@@ -777,44 +775,6 @@
   .safety-home-more{ text-align:center; margin-top:40px; }
   .safety-home-more .top-link{ color:#fff; }
   .safety-home-more .top-link:hover{ color:#fff; opacity:.8; }
-
-  /* ---- FAQ ---- */
-  .faq-section{
-    margin-top:32px;
-    margin-bottom:24px;
-    scroll-margin-top:calc(var(--sticky-h, 160px) + 16px);
-  }
-  .faq-section h2{ font-size:1.4rem; margin-bottom:22px; text-align:center; }
-  .faq-item{
-    border-top:1px solid var(--line);
-  }
-  .faq-item:last-child{ border-bottom:1px solid var(--line); }
-  .faq-item summary{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:18px 2px;
-    cursor:pointer;
-    font-size:15.5px;
-    color:var(--ink);
-  }
-  .faq-item summary::-webkit-details-marker{ display:none; }
-  .faq-item summary .chev{
-    flex-shrink:0;
-    transition:transform .25s ease;
-    color:var(--ink-soft);
-  }
-  .faq-item[open] summary .chev{ transform:rotate(180deg); }
-  .faq-item summary:hover{ color:var(--accent); }
-  .faq-item .faq-answer{
-    margin:0;
-    padding:0 2px 20px;
-    font-size:14px;
-    color:var(--ink-soft);
-    line-height:1.55;
-  }
 
   /* ---- Site footer ---- */
   .site-footer{
@@ -866,7 +826,6 @@
     <button type="button" class="nav-link top-link" data-footer-view="grid">Каталог</button>
     <button type="button" class="nav-link top-link" data-footer-view="sources">Источники</button>
     <button type="button" class="nav-link top-link" data-footer-view="safety">Правила безопасности</button>
-    <button type="button" class="nav-link top-link" data-footer-anchor="faq">Частые вопросы</button>
     <button type="button" class="nav-link top-link" data-footer-view="blog">Заметки травницы</button>
   </div>
   <div class="nav-right" aria-hidden="true"></div>
@@ -915,7 +874,6 @@
       <h4>Важно знать</h4>
       <ul>
         <li><button type="button" data-footer-view="safety">Правила безопасности</button></li>
-        <li><button type="button" data-footer-anchor="faq">Частые вопросы</button></li>
       </ul>
     </div>
   </div>
@@ -939,18 +897,6 @@
     'yuzu':'Юдзу','citronella':'Цитронелла','black-cumin':'Чёрный тмин','ho-wood':'Хо-дерево',
     'damiana':'Дамиана'
   };
-
-  // Содержание FAQ — пересказ официальных материалов doterra.com/RU/ru_RU
-  // (что такое эфирное масло, как использовать, процесс CPTG), прочитанных
-  // напрямую 2026-10-22.
-  const FAQ_ITEMS = [
-    { q:'Что такое эфирное масло?', a:'Летучее ароматическое вещество из семян, коры, стеблей, корней или цветков растения. В природе такие вещества защищают растение и участвуют в опылении; помимо этого масла используют в кулинарии, косметологии и ароматерапии.' },
-    { q:'Как ароматически использовать масло?', a:'Проще всего капнуть пару капель на ладонь и вдохнуть, или использовать диффузор с холодным распылением. Запах напрямую связан с лимбической системой мозга, отвечающей за эмоции и память, поэтому эффект ощущается быстро.' },
-    { q:'Можно ли наносить масло на кожу неразведённым?', a:'Для большинства масел стандартное разведение — 1 капля эфирного масла на 1–5 капель базового (например, фракционированного кокосового). Для «горячих» масел, первого применения и чувствительной кожи — слабее, около 1:10.' },
-    { q:'Можно ли принимать эфирные масла внутрь?', a:'Только те, что явно промаркированы производителем для внутреннего приёма (панель Supplement Facts на этикетке). Ориентировочный максимум — не более 20 капель в сутки, начинать с 1–2, разведённых в воде или капсуле.' },
-    { q:'Как проверяют качество масла?', a:'Протокол CPTG включает органолептический и микробиологический анализ, газовую хроматографию, масс-спектрометрию, ИК-спектроскопию и тест на тяжёлые металлы — так подтверждают отсутствие синтетики и примесей в каждой партии.' },
-    { q:'Безопасны ли масла при беременности и для детей и животных?', a:'Официальная рекомендация — консультация с врачом перед любым использованием. При беременности избегают «горячих» масел и большинства масел для приёма внутрь; детям нужно более сильное разведение; кошки особенно чувствительны к фенольным маслам (орегано, тимьян, гвоздика). Подробности — в разделе «Правила безопасности».' }
-  ];
 
   const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
   const oils = OILS_DATA.oils;
@@ -1120,22 +1066,6 @@
       </section>`;
   }
 
-  function renderFAQSection(){
-    return `
-      <section class="faq-section" id="faq">
-        <h2>Частые вопросы</h2>
-        ${FAQ_ITEMS.map(f=>`
-          <details class="faq-item">
-            <summary>
-              ${f.q}
-              <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <p class="faq-answer">${f.a}</p>
-          </details>
-        `).join('')}
-      </section>`;
-  }
-
   function renderGrid(){
     const filtered = oils.filter(o=>
       matchesSearch(o,state.query) &&
@@ -1156,7 +1086,6 @@
       ${filtered.length===0?'<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>':''}
       ${renderUsageLegend()}
       ${renderSafetyHome()}
-      ${renderFAQSection()}
     `;
   }
 
@@ -1554,16 +1483,10 @@
 
   // Синхронизирует позицию прилипания фильтров каталога с реальной высотой
   // верхнего меню (может меняться: перенос пунктов на мобильном, шрифты и т.п.) —
-  // без этого между меню и фильтрами при скролле видна щель с карточками. Заодно
-  // считает суммарную высоту меню+фильтров (--sticky-h) для scroll-margin-top
-  // у якорных секций (FAQ), иначе прыжок по ссылке прячет заголовок под ними.
+  // без этого между меню и фильтрами при скролле видна щель с карточками.
   function syncNavHeight(){
     const nav = document.querySelector('.site-nav-wrap');
-    const navH = nav ? nav.offsetHeight : 0;
-    document.documentElement.style.setProperty('--nav-h', navH + 'px');
-    const controls = document.querySelector('.controls');
-    const controlsH = controls ? controls.offsetHeight : 0;
-    document.documentElement.style.setProperty('--sticky-h', (navH + controlsH) + 'px');
+    if(nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
   }
   syncNavHeight();
   window.addEventListener('resize', syncNavHeight);
