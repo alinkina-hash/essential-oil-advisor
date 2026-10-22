@@ -1,0 +1,634 @@
+{
+  "legend": {
+    "aromaticIcon": {
+      "badge": "A",
+      "label_ru": "Может использоваться ароматически"
+    },
+    "topicalIcon": {
+      "badge": "T",
+      "label_ru": "Может использоваться местно"
+    },
+    "internalIcon": {
+      "badge": "I",
+      "label_ru": "Можно использовать внутренне"
+    },
+    "neatIcon": {
+      "badge": "N",
+      "label_ru": "Может использоваться без разбавления (аккуратно)"
+    },
+    "sensitiveIcon": {
+      "badge": null,
+      "label_ru": "Разбавьте для чувствительной кожи"
+    },
+    "diluteIcon": {
+      "badge": null,
+      "label_ru": "Разбавьте перед местным применением"
+    }
+  },
+  "oils": {
+    "arborvitae": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/arborvitae-oil"
+    },
+    "basil": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/basil-oil"
+    },
+    "bergamot": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/bergamot-oil"
+    },
+    "black-pepper": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/black-pepper-oil"
+    },
+    "blue-tansy": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/blue-tansy-oil"
+    },
+    "cardamom": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cardamom-oil"
+    },
+    "cassia": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cassia-oil"
+    },
+    "cedarwood": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cedarwood-oil"
+    },
+    "cilantro": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cilantro-oil"
+    },
+    "cinnamon-bark": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cinnamon-bark-oil"
+    },
+    "clary-sage": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/clary-sage-oil"
+    },
+    "clove": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/clove-oil"
+    },
+    "copaiba": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/copaiba-oil"
+    },
+    "coriander": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/coriander-oil"
+    },
+    "cypress": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cypress-oil"
+    },
+    "douglas-fir": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/douglas-fir-oil"
+    },
+    "eucalyptus": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "diluteIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/eucalyptus-oil"
+    },
+    "frankincense": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/frankincense-oil"
+    },
+    "geranium": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/geranium-oil"
+    },
+    "ginger": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/ginger-oil"
+    },
+    "grapefruit": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/grapefruit-oil"
+    },
+    "green-mandarin": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/green-mandarin-oil"
+    },
+    "helichrysum": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/helichrysum-oil"
+    },
+    "jasmine": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/jasmine-oil"
+    },
+    "juniper-berry": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/juniper-berry-oil"
+    },
+    "lavender": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/lavender-oil"
+    },
+    "lemon": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/lemon-oil"
+    },
+    "lemongrass": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/lemongrass-oil"
+    },
+    "lime": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/lime-oil"
+    },
+    "marjoram": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/marjoram-oil"
+    },
+    "melissa": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/melissa-oil"
+    },
+    "myrrh": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/myrrh-oil"
+    },
+    "oregano": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/oregano-oil"
+    },
+    "patchouli": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/patchouli-oil"
+    },
+    "peppermint": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/peppermint-oil"
+    },
+    "petitgrain": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/petitgrain-oil"
+    },
+    "pink-pepper": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/pink-pepper-oil"
+    },
+    "roman-chamomile": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/roman-chamomile-oil"
+    },
+    "rose": {
+      "icons": [],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/rose-oil"
+    },
+    "rosemary": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/rosemary-oil"
+    },
+    "sandalwood": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/sandalwood-oil"
+    },
+    "siberian-fir": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/siberian-fir-oil"
+    },
+    "spearmint": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/spearmint-oil"
+    },
+    "spikenard": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/spikenard-oil"
+    },
+    "tangerine": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/tangerine-oil"
+    },
+    "thyme": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/thyme-oil"
+    },
+    "turmeric": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/turmeric-oil"
+    },
+    "vetiver": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/vetiver-oil"
+    },
+    "wild-orange": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/wild-orange-oil"
+    },
+    "wintergreen": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/wintergreen-oil"
+    },
+    "ylang-ylang": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/ylang-ylang-oil"
+    },
+    "on-guard": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/on-guard-oil"
+    },
+    "breathe": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/breathe-oil"
+    },
+    "balance": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/balance-oil"
+    },
+    "aromatouch": {
+      "icons": [
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/aromatouch-oil"
+    },
+    "deep-blue": {
+      "icons": [
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/deep-blue-oil"
+    },
+    "digestzen": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/digestzen-oil"
+    },
+    "zendocrine": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/zendocrine-oil"
+    },
+    "motivate": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/motivate-oil"
+    },
+    "cheer": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/cheer-oil"
+    },
+    "console": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/console-oil"
+    },
+    "intune": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/intune-oil"
+    },
+    "forgive": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/forgive-oil"
+    },
+    "passion": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/passion-oil"
+    },
+    "citrus-bliss": {
+      "icons": [
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/citrus-bliss-oil"
+    },
+    "purify": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/purify-oil"
+    },
+    "clarycalm": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/clarycalm-oil"
+    },
+    "melaleuca": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/tea-tree-oil"
+    },
+    "neroli": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/neroli-touch-oil"
+    },
+    "serenity": {
+      "icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "source_url": "https://www.doterra.com/RU/ru_RU/p/doterra-serenity-oil"
+    }
+  },
+  "unresolved": [
+    "dill",
+    "fennel",
+    "litsea",
+    "magnolia",
+    "whisper",
+    "elevation",
+    "hd-clear"
+  ]
+}

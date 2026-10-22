@@ -12,6 +12,7 @@ const kundalini = JSON.parse(fs.readFileSync(path.join(rawDir, 'kundalini_oils.j
 const kalmykova = JSON.parse(fs.readFileSync(path.join(rawDir, 'kalmykova_notes.json'), 'utf8'));
 const additional = JSON.parse(fs.readFileSync(path.join(rawDir, 'additional_oils.json'), 'utf8'));
 const sources = JSON.parse(fs.readFileSync(path.join(rawDir, 'sources.json'), 'utf8'));
+const usageIcons = JSON.parse(fs.readFileSync(path.join(rawDir, 'doterra_usage_icons.json'), 'utf8'));
 
 // Масла и смеси, которые сейчас есть в наличии — редактируй эти списки при пополнении коллекции
 const inStockSingles = new Set([
@@ -129,10 +130,21 @@ for (const oil of allOils) {
   }
 }
 
+// Значки применения (ароматически/местно/внутренне/без разведения) с русской версии
+// doterra.com — собраны по 70 из 77 позиций каталога doTERRA (см. data/raw/doterra_usage_icons.json).
+for (const oil of allOils) {
+  const entry = usageIcons.oils[oil.id];
+  if (entry) {
+    oil.usage_icons = entry.icons;
+    oil.usage_icons_source = entry.source_url;
+  }
+}
+
 const merged = {
   general_safety: doterra.general_safety,
   kalmykova_notes: kalmykova,
   sources: sources,
+  usage_icons_legend: usageIcons.legend,
   oils: allOils
 };
 

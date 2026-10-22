@@ -1177,6 +1177,32 @@ const OILS_DATA = {
       }
     ]
   },
+  "usage_icons_legend": {
+    "aromaticIcon": {
+      "badge": "A",
+      "label_ru": "Может использоваться ароматически"
+    },
+    "topicalIcon": {
+      "badge": "T",
+      "label_ru": "Может использоваться местно"
+    },
+    "internalIcon": {
+      "badge": "I",
+      "label_ru": "Можно использовать внутренне"
+    },
+    "neatIcon": {
+      "badge": "N",
+      "label_ru": "Может использоваться без разбавления (аккуратно)"
+    },
+    "sensitiveIcon": {
+      "badge": null,
+      "label_ru": "Разбавьте для чувствительной кожи"
+    },
+    "diluteIcon": {
+      "badge": null,
+      "label_ru": "Разбавьте перед местным применением"
+    }
+  },
   "oils": [
     {
       "id": "arborvitae",
@@ -1196,7 +1222,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности, кормлении грудью и для детей — использовать с осторожностью, в разведении, после консультации с врачом. Держать вдали от глаз. Ограниченные данные о безопасности для домашних животных — избегать прямого контакта с кошками.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/arborvitae-oil"
     },
     {
       "id": "basil",
@@ -1248,7 +1280,14 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/basil-oil"
     },
     {
       "id": "bergamot",
@@ -1297,7 +1336,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/bergamot-oil"
     },
     {
       "id": "black-pepper",
@@ -1342,7 +1388,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/black-pepper-oil"
     },
     {
       "id": "blue-tansy",
@@ -1361,7 +1414,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Ограниченные данные о безопасности при беременности и для детей — использовать с осторожностью и в разведении. Может окрашивать светлую одежду/полотенца из-за насыщенного синего цвета.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/blue-tansy-oil"
     },
     {
       "id": "cardamom",
@@ -1383,7 +1442,14 @@ const OILS_DATA = {
       "in_stock": false,
       "notes_kalmykova": [
         "Я добавлю, при метеоризме, спазмах, тошноте и др. проблем с ЖКТ можно использовать ЭМ кориандра, кардамона (хорошо с цитрусовым), имбиря (осторожно!), сельдерея, тмина - все зависит от конкретного (текст в источнике обрывается)."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cardamom-oil"
     },
     {
       "id": "cassia",
@@ -1402,7 +1468,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts — использовать очень небольшими дозами (1 капля) в капсуле; не превышать рекомендованные дозы из-за высокой активности коричного альдегида.",
       "safety_notes": "Может сильно раздражать кожу и слизистые — держать вдали от глаз. Не рекомендуется при беременности и детям. Разводить перед любым контактом с кожей.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cassia-oil"
     },
     {
       "id": "cedarwood",
@@ -1442,7 +1515,13 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cedarwood-oil"
     },
     {
       "id": "cilantro",
@@ -1461,7 +1540,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts — можно добавлять в пищу и напитки, использовать в капсулах.",
       "safety_notes": "При беременности использовать с осторожностью. Может вызывать чувствительность кожи у некоторых людей — тест перед применением.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cilantro-oil"
     },
     {
       "id": "cinnamon-bark",
@@ -1501,7 +1587,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cinnamon-bark-oil"
     },
     {
       "id": "clary-sage",
@@ -1549,7 +1642,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/clary-sage-oil"
     },
     {
       "id": "clove",
@@ -1572,7 +1672,14 @@ const OILS_DATA = {
       "protocol_notes_kalmykova": [
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного.",
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/clove-oil"
     },
     {
       "id": "copaiba",
@@ -1595,7 +1702,14 @@ const OILS_DATA = {
       "in_stock": true,
       "notes_kalmykova": [
         "Мирру купила, использую в смеси с копайбой - при миоме и спайках - они хорошо рассасывают спайки, помогают при миоме и эндометриозе (у мирры есть свойство рассасывать эндометриоз, но это как сопутствующая терапия, конечно). ...на зону лобка я наношу либо масло копайбы + мирры + базовое... Обычно 2-3 капли копайбы и 2 капли мирры + чайную ложку базового."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/copaiba-oil"
     },
     {
       "id": "coriander",
@@ -1642,7 +1756,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/coriander-oil"
     },
     {
       "id": "cypress",
@@ -1661,7 +1782,13 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts в некоторых линейках — используется в основном ароматически и топически; проверяйте этикетку конкретной бутылки перед приёмом внутрь.",
       "safety_notes": "При беременности использовать с осторожностью (традиционно из-за возможного влияния на кровообращение/гормоны). С осторожностью при повышенном давлении и гормонозависимых состояниях.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cypress-oil"
     },
     {
       "id": "dill",
@@ -1698,7 +1825,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности и для детей — разводить сильнее. В целом хорошо переносится, тест на чувствительность кожи рекомендуется.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/douglas-fir-oil"
     },
     {
       "id": "eucalyptus",
@@ -1743,7 +1876,13 @@ const OILS_DATA = {
         "«Замасливание» пупочной зоны в антипаразитарном протоколе — базовое масло с каплей этого эфирного.",
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного.",
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "diluteIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/eucalyptus-oil"
     },
     {
       "id": "fennel",
@@ -1826,7 +1965,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/frankincense-oil"
     },
     {
       "id": "geranium",
@@ -1873,7 +2019,14 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/geranium-oil"
     },
     {
       "id": "ginger",
@@ -1898,7 +2051,14 @@ const OILS_DATA = {
       ],
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/ginger-oil"
     },
     {
       "id": "grapefruit",
@@ -1938,7 +2098,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/grapefruit-oil"
     },
     {
       "id": "green-mandarin",
@@ -1978,7 +2145,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/green-mandarin-oil"
     },
     {
       "id": "helichrysum",
@@ -1997,7 +2171,14 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности и для детей использовать в разведении. Серьёзных противопоказаний не отмечено; тест на чувствительность кожи рекомендуется из-за высокой концентрации активных веществ.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/helichrysum-oil"
     },
     {
       "id": "jasmine",
@@ -2054,7 +2235,13 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/jasmine-oil"
     },
     {
       "id": "juniper-berry",
@@ -2077,7 +2264,14 @@ const OILS_DATA = {
       "protocol_notes_kalmykova": [
         "«Замасливание» пупочной зоны в антипаразитарном протоколе — базовое масло с каплей этого эфирного.",
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/juniper-berry-oil"
     },
     {
       "id": "lavender",
@@ -2144,7 +2338,13 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/lavender-oil"
     },
     {
       "id": "lemon",
@@ -2196,7 +2396,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/lemon-oil"
     },
     {
       "id": "lemongrass",
@@ -2236,7 +2443,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/lemongrass-oil"
     },
     {
       "id": "lime",
@@ -2276,7 +2490,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/lime-oil"
     },
     {
       "id": "litsea",
@@ -2356,7 +2577,14 @@ const OILS_DATA = {
       "internal_use": "Внутреннее использование doTERRA явно не продвигает для этого масла — проверяйте наличие Supplement Facts на конкретной этикетке перед приёмом внутрь; при отсутствии — только ароматически/топически.",
       "safety_notes": "ИЗБЕГАТЬ ПРИ БЕРЕМЕННОСТИ (традиционно относят к маслам с emmenagogue-действием). С осторожностью при пониженном давлении (может усиливать гипотензивный эффект).",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/marjoram-oil"
     },
     {
       "id": "melaleuca",
@@ -2402,7 +2630,13 @@ const OILS_DATA = {
       "protocol_notes_kalmykova": [
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного.",
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/tea-tree-oil"
     },
     {
       "id": "melissa",
@@ -2422,7 +2656,14 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Высокий риск раздражения/сенсибилизации кожи — обязательно тестировать и хорошо разводить. При беременности использовать с осторожностью.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/melissa-oil"
     },
     {
       "id": "myrrh",
@@ -2448,7 +2689,14 @@ const OILS_DATA = {
       "protocol_notes_kalmykova": [
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного.",
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/myrrh-oil"
     },
     {
       "id": "neroli",
@@ -2489,7 +2737,13 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/neroli-touch-oil"
     },
     {
       "id": "oregano",
@@ -2534,7 +2788,14 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/oregano-oil"
     },
     {
       "id": "patchouli",
@@ -2553,7 +2814,14 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности использовать с осторожностью. В целом хорошо переносится, серьёзных противопоказаний не отмечено.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/patchouli-oil"
     },
     {
       "id": "peppermint",
@@ -2597,7 +2865,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/peppermint-oil"
     },
     {
       "id": "petitgrain",
@@ -2616,7 +2891,14 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности использовать с осторожностью. В целом хорошо переносится, не фототоксично.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/petitgrain-oil"
     },
     {
       "id": "pink-pepper",
@@ -2635,7 +2917,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts у doTERRA — можно добавлять в пищу или принимать в капсуле в малых количествах.",
       "safety_notes": "При беременности использовать с осторожностью. Данных по безопасности меньше, чем по давно известным маслам — придерживайтесь стандартных разведений и тестируйте кожу.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/pink-pepper-oil"
     },
     {
       "id": "roman-chamomile",
@@ -2679,7 +2968,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/roman-chamomile-oil"
     },
     {
       "id": "rose",
@@ -2732,7 +3028,9 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/rose-oil"
     },
     {
       "id": "rosemary",
@@ -2780,7 +3078,14 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "Один из вариантов для полоскания рта: 1 чайная ложка базового масла + 1-2 капли этого эфирного."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/rosemary-oil"
     },
     {
       "id": "sandalwood",
@@ -2829,7 +3134,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/sandalwood-oil"
     },
     {
       "id": "siberian-fir",
@@ -2852,7 +3164,14 @@ const OILS_DATA = {
       "in_stock": true,
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/siberian-fir-oil"
     },
     {
       "id": "spearmint",
@@ -2871,7 +3190,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts — популярно добавлять в напитки, использовать в капсуле.",
       "safety_notes": "Содержит меньше ментола, чем перечная мята, но всё же не рекомендуется рядом с лицом младенцев. При беременности использовать с осторожностью.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/spearmint-oil"
     },
     {
       "id": "spikenard",
@@ -2890,7 +3216,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности использовать с осторожностью. Может иметь выраженный седативный эффект — с осторожностью сочетать с седативными препаратами.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/spikenard-oil"
     },
     {
       "id": "tangerine",
@@ -2931,7 +3263,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/tangerine-oil"
     },
     {
       "id": "thyme",
@@ -2982,7 +3321,14 @@ const OILS_DATA = {
       },
       "protocol_notes_kalmykova": [
         "В общем списке антипаразитарных эфирных масел из её курса."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "diluteIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/thyme-oil"
     },
     {
       "id": "turmeric",
@@ -3002,7 +3348,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts — популярно принимать в капсуле или добавлять в еду; также продаётся в виде капсул с экстрактом куркумы.",
       "safety_notes": "С осторожностью при приёме антикоагулянтов/перед операциями (может влиять на свёртываемость крови) и при желчнокаменной болезни. При беременности использовать с осторожностью, особенно внутренний приём в терапевтических дозах.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/turmeric-oil"
     },
     {
       "id": "vetiver",
@@ -3021,7 +3374,14 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности и для детей использовать в разведении. В целом хорошо переносится, серьёзных противопоказаний не отмечено.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/vetiver-oil"
     },
     {
       "id": "wild-orange",
@@ -3062,7 +3422,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/wild-orange-oil"
     },
     {
       "id": "wintergreen",
@@ -3079,7 +3446,13 @@ const OILS_DATA = {
       "internal_use": "НЕ РЕКОМЕНДУЕТСЯ для регулярного внутреннего приёма — высокое содержание метилсалицилата действует как аспирин; использовать внутрь только в исключительных случаях и строго по этикетке/рекомендации специалиста.",
       "safety_notes": "ПРОТИВОПОКАЗАНО при аллергии на аспирин/салицилаты, при приёме антикоагулянтов, детям, при беременности и кормлении грудью. Не использовать перед операциями. Токсично при проглатывании в значимых количествах — хранить строго вдали от детей и животных.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/wintergreen-oil"
     },
     {
       "id": "ylang-ylang",
@@ -3128,7 +3501,14 @@ const OILS_DATA = {
           "эффективно работает также применение масла в пупочной зоне, но для этого вам стоит подготовить свой кишечник, улучшив его работу приёмом «Очищающего сбора» (семена тмина коричневого, семена... — текст в источнике обрывается)",
           "минимум один раз в неделю принимать ванну с маслами. На соль накапать 4-5 капель выбранного масла, растворить в воде и лежать 30 минут. Температура воды при этом не должна превышать 42 градуса"
         ]
-      }
+      },
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/ylang-ylang-oil"
     },
     {
       "id": "on-guard",
@@ -3152,7 +3532,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts — популярно принимать в капсуле или добавлять каплю в воду в сезон простуд.",
       "safety_notes": "Может сильно раздражать кожу в неразведённом виде. Не рекомендуется при беременности без консультации врача (содержит Корицу). Держать вдали от глаз и от животных, особенно кошек.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/on-guard-oil"
     },
     {
       "id": "breathe",
@@ -3178,7 +3565,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "НЕ наносить рядом с лицом младенцев и маленьких детей (содержит мятные/цинеольные компоненты). При астме использовать с осторожностью. При беременности — с осторожностью.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/breathe-oil"
     },
     {
       "id": "balance",
@@ -3201,7 +3594,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности и для детей использовать с осторожностью. В целом хорошо переносится благодаря готовому разведению.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/balance-oil"
     },
     {
       "id": "aromatouch",
@@ -3227,7 +3626,12 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Содержит цитрусовое масло (Грейпфрут) — лёгкая фоточувствительность возможна, ограничить солнце после массажа. При беременности — с осторожностью (содержит Базилик).",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/aromatouch-oil"
     },
     {
       "id": "deep-blue",
@@ -3252,7 +3656,12 @@ const OILS_DATA = {
       "internal_use": "НЕ ПРЕДНАЗНАЧЕН для внутреннего приёма — не заявлено doTERRA, содержит салицилаты.",
       "safety_notes": "ПРОТИВОПОКАЗАНО при аллергии на аспирин/салицилаты, при приёме антикоагулянтов, детям без консультации врача, при беременности и кормлении грудью. Не наносить перед операциями. Хранить вдали от животных.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/deep-blue-oil"
     },
     {
       "id": "digestzen",
@@ -3280,7 +3689,14 @@ const OILS_DATA = {
       "in_stock": true,
       "notes_kalmykova": [
         "При метеоризме и вздутии я применяла Дайджест Зен от До Терра, а также лаванду, римскую ромашку (снимает спазмы очень хорошо!), мяту перечную тоже наносила на зону печени и низа живота."
-      ]
+      ],
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/digestzen-oil"
     },
     {
       "id": "zendocrine",
@@ -3305,7 +3721,14 @@ const OILS_DATA = {
       "internal_use": "Есть Supplement Facts (также выпускается в капсулах Zendocrine Softgels/Complex) — использовать согласно инструкции, обычно курсами.",
       "safety_notes": "Содержит Розмарин — избегать при беременности и эпилепсии. При заболеваниях почек/печени — консультация с врачом перед длительным внутренним приёмом.",
       "brand": "doTERRA",
-      "in_stock": true
+      "in_stock": true,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "internalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/zendocrine-oil"
     },
     {
       "id": "whisper",
@@ -3361,7 +3784,13 @@ const OILS_DATA = {
       "internal_use": "Стандартное масло — только ароматическое/топическое использование; отдельный продукт 'Serenity Softgels' имеет Supplement Facts и предназначен именно для внутреннего приёма.",
       "safety_notes": "Может усиливать седативный эффект — с осторожностью сочетать со снотворными/седативными препаратами и алкоголем. Не использовать перед вождением. При беременности — с осторожностью.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/doterra-serenity-oil"
     },
     {
       "id": "elevation",
@@ -3416,7 +3845,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Содержит Розмарин и Базилик — избегать при беременности и эпилепсии. Не наносить рядом с лицом маленьких детей (мятный компонент).",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/motivate-oil"
     },
     {
       "id": "cheer",
@@ -3444,7 +3879,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Может сильно раздражать кожу в неразведённом виде из-за Гвоздики и Корицы. Не рекомендуется при беременности без консультации врача. Держать вдали от глаз и детей.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/cheer-oil"
     },
     {
       "id": "console",
@@ -3471,7 +3912,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "При беременности использовать с осторожностью. В целом хорошо переносится благодаря готовому разведению.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/console-oil"
     },
     {
       "id": "intune",
@@ -3497,7 +3944,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Содержит Лайм — при нанесении возможна лёгкая фоточувствительность, ограничить прямое солнце на местах нанесения в течение 12 часов. Для детей использовать по рекомендации специалиста.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/intune-oil"
     },
     {
       "id": "forgive",
@@ -3522,7 +3975,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Содержит Бергамот — возможна лёгкая фоточувствительность на местах нанесения, ограничить солнце 12 часов. Содержит Тимьян и Мирру — избегать при беременности без консультации врача.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/forgive-oil"
     },
     {
       "id": "passion",
@@ -3550,7 +4009,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Не рекомендуется при беременности без консультации врача (содержит Корицу, Гвоздику). Может раздражать чувствительную кожу — тест перед регулярным использованием.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "sensitiveIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/passion-oil"
     },
     {
       "id": "citrus-bliss",
@@ -3577,7 +4042,11 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма для стандартного формата — только ароматическое и наружное использование.",
       "safety_notes": "ФОТОСЕНСИБИЛИЗИРУЮЩЕЕ (содержит несколько цитрусовых, включая Бергамот) — избегать солнца/УФ минимум 12 часов после нанесения на кожу. При беременности — с осторожностью.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/citrus-bliss-oil"
     },
     {
       "id": "purify",
@@ -3603,7 +4072,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только ароматическое и наружное использование.",
       "safety_notes": "Содержит цитрусовые (Лимон, Лайм) — возможна лёгкая фоточувствительность на местах нанесения. При беременности и для детей — разводить сильнее.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/purify-oil"
     },
     {
       "id": "clarycalm",
@@ -3632,7 +4107,13 @@ const OILS_DATA = {
       "internal_use": "Не заявлено doTERRA для внутреннего приёма — только наружное использование.",
       "safety_notes": "ИЗБЕГАТЬ ПРИ БЕРЕМЕННОСТИ (содержит Шалфей мускатный и Фенхель — гормоноподобное действие). Содержит Бергамот — возможна лёгкая фоточувствительность на местах нанесения, ограничить солнце 12 часов. С осторожностью при гормонозависимых состояниях и приёме гормональных препаратов.",
       "brand": "doTERRA",
-      "in_stock": false
+      "in_stock": false,
+      "usage_icons": [
+        "aromaticIcon",
+        "topicalIcon",
+        "neatIcon"
+      ],
+      "usage_icons_source": "https://www.doterra.com/RU/ru_RU/p/clarycalm-oil"
     },
     {
       "id": "hd-clear",
