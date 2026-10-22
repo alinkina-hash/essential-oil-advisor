@@ -1080,10 +1080,12 @@
         <button type="button" class="stock-pill ${state.onlyStock?'on':'off'}" data-stock="true"><span class="stock-dot" style="margin:0;"></span>Мои масла</button>
         <button type="button" class="stock-pill ${!state.onlyStock?'on':'off'}" data-stock="false">Весь каталог doTERRA</button>
       </div>
-      ${renderControls()}
-      <p class="count-line">${filtered.length} ${pluralOils(filtered.length)}${state.onlyStock?' в твоей коллекции':' в каталоге'}</p>
-      <div class="grid">${cards || ''}</div>
-      ${filtered.length===0?'<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>':''}
+      <div class="catalog-scroll-area">
+        ${renderControls()}
+        <p class="count-line">${filtered.length} ${pluralOils(filtered.length)}${state.onlyStock?' в твоей коллекции':' в каталоге'}</p>
+        <div class="grid">${cards || ''}</div>
+        ${filtered.length===0?'<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>':''}
+      </div>
       ${renderUsageLegend()}
       ${renderSafetyHome()}
     `;
