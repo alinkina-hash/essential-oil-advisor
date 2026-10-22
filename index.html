@@ -872,7 +872,7 @@
   <div class="nav-right" aria-hidden="true"></div>
 </div></nav>
 
-<div class="hero-banner">
+<div class="hero-banner" id="heroBanner">
   <img src="images/hero-dark-leaves-moody.jpg" alt="" aria-hidden="true">
   <div class="hero-copy">
     <div class="hero-copy-inner">
@@ -887,7 +887,7 @@
   </div>
 </div>
 
-<div class="intro-section">
+<div class="intro-section" id="introSection">
   <p>Что помогает от чего, как развести и когда лучше не трогать — собрано в одном месте, без лишнего</p>
 </div>
 
@@ -1456,6 +1456,11 @@
     else if(state.view==='blog'){ app.innerHTML = renderBlogNotes(); }
     else if(state.view==='sources'){ app.innerHTML = renderSourcesPage(); }
     else { app.innerHTML = renderGrid(); }
+    const isSubPage = state.view !== 'grid';
+    const hero = document.getElementById('heroBanner');
+    const intro = document.getElementById('introSection');
+    if(hero) hero.style.display = isSubPage ? 'none' : '';
+    if(intro) intro.style.display = isSubPage ? 'none' : '';
     if(!keepScroll) window.scrollTo(0,0);
     bind();
   }
