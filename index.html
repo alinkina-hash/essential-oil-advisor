@@ -1270,6 +1270,17 @@
           ${(o.chakra_sources && o.chakra_sources.length) ? `<p class="source-line" style="margin-top:8px;">Соответствие чакре по данным ароматерапевтической литературы — не официальные/научные данные. Источники: ${o.chakra_sources.map(k=>CHAKRA_SOURCES[k]).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label}</a>`).join(', ')}</p>` : ''}
         </div>` : ''}
 
+        ${o.emotions ? `
+        <div class="section emotions-section">
+          <span class="eyebrow">Работа с эмоциями${o.emotions.theme ? ' — ' + o.emotions.theme : ''}</span>
+          ${o.emotions.description.split(/\n\s*\n/).map(par=>`<p>${par}</p>`).join('')}
+          ${o.emotions.negative && o.emotions.negative.length ? `<p style="margin-top:10px;"><b>Отрицательные эмоции:</b> ${o.emotions.negative.join(', ')}</p>` : ''}
+          ${o.emotions.positive && o.emotions.positive.length ? `<p style="margin-top:8px;"><b>Положительные качества:</b> ${o.emotions.positive.join(', ')}</p>` : ''}
+          ${o.emotions.complementary && o.emotions.complementary.length ? `<p style="margin-top:8px;"><b>Комплементарные масла:</b> ${o.emotions.complementary.join(', ')}</p>` : ''}
+          ${o.emotions.application ? `<p style="margin-top:8px;"><b>Применение:</b><br>${o.emotions.application.split('\n').join('<br>')}</p>` : ''}
+          <p class="source-line" style="margin-top:10px;">Источник: «Эмоции и эфирные масла» — справочное руководство по эмоциональному исцелению, EssentialEmotions LLC (enlightenhealing.com), русский перевод: Владимир Алябьев. Это личный/духовный взгляд на масла, не медицинские или научные данные.</p>
+        </div>` : ''}
+
         <div class="safety-box">
           <span class="eyebrow">Меры предосторожности</span>
           <p>${o.safety_notes}</p>
