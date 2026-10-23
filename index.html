@@ -405,13 +405,16 @@
     border-color:var(--blog);
     color:var(--blog);
   }
-  .chakra-chips{ margin-top:2px; }
+  .chakra-chips{ margin-top:2px; align-items:center; }
   .chip.chakra-chip{
     display:inline-flex;
     align-items:center;
-    gap:6px;
+    justify-content:center;
+    padding:5px;
+    width:30px;
+    height:30px;
   }
-  .chip.chakra-chip img{ width:16px; height:16px; object-fit:contain; flex-shrink:0; }
+  .chip.chakra-chip img{ width:18px; height:18px; object-fit:contain; flex-shrink:0; }
 
   .count-line{
     font-size:13px;
@@ -547,6 +550,8 @@
     font-size:13px;
     color:var(--ink-soft);
   }
+  .usage-legend-item i{ font-style:italic; }
+  .chakra-legend-icon{ width:22px; height:22px; object-fit:contain; flex-shrink:0; }
 
   .tag-row{
     display:flex;
@@ -940,6 +945,13 @@
     'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',    color:'#8E6FB0', file:'assets/chakras/crown.png' }
   };
 
+  const CHAKRA_SOURCES = {
+    satyori:       { url:'https://satyori.com/chakras/oil-guide/', label:'satyori.com' },
+    zanna:         { url:'https://zannakeithley.com/essential-oils-for-chakras/', label:'zannakeithley.com' },
+    tisserand:     { url:'https://www.tisserand.com/blogs/all-blog-articles/chakra-balancing-with-essential-oils', label:'tisserand.com' },
+    perfectpotion: { url:'https://www.perfectpotion.com.au/harmony-blend.html', label:'perfectpotion.com.au' }
+  };
+
   const state = { query:'', tag:'all', hormoneSub:'all', chakra:'all', onlyStock:true, view:'grid', activeId:null };
   const oils = OILS_DATA.oils;
   const safety = OILS_DATA.general_safety;
@@ -1033,8 +1045,8 @@
         <div class="chips chakra-chips" id="chakraChips">
           <button class="chip ${state.chakra==='all'?'active':''}" data-chakra="all">Все чакры</button>
           ${Object.entries(CHAKRAS).map(([id,c])=>`
-            <button class="chip chakra-chip ${state.chakra===id?'active':''}" data-chakra="${id}">
-              <img src="${c.file}" alt="">${c.name_ru}
+            <button class="chip chakra-chip ${state.chakra===id?'active':''}" data-chakra="${id}" title="${c.name_ru} (${c.sanskrit})">
+              <img src="${c.file}" alt="${c.name_ru} (${c.sanskrit})">
             </button>`).join('')}
         </div>
       </div>`;
@@ -1107,6 +1119,21 @@
       </div>`;
   }
 
+  function renderChakraLegend(){
+    return `
+      <div class="usage-legend chakra-legend">
+        <h3>Условные обозначения чакр</h3>
+        <div class="usage-legend-grid">
+          ${Object.values(CHAKRAS).map(c=>`
+            <div class="usage-legend-item">
+              <img src="${c.file}" alt="" class="chakra-legend-icon">
+              <span>${c.name_ru} <i>(${c.sanskrit})</i></span>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
   function renderSafetyHome(){
     const hot = safety.hot_oils_always_dilute.oils.map(ingredientName).join(' · ');
     const photo = safety.photosensitive_citrus_oils.oils.map(ingredientName).join(' · ');
@@ -1167,6 +1194,7 @@
         ${filtered.length===0?'<p class="empty">Ничего не найдено — попробуй изменить запрос или снять фильтр «Только мои масла».</p>':''}
       </div>
       ${renderUsageLegend()}
+      ${renderChakraLegend()}
       ${renderSafetyHome()}
     `;
   }
@@ -1239,6 +1267,7 @@
             ${o.chakras.map(chakraItemHTML).join('')}
           </div>
           ${o.chakra_note ? `<p style="margin-top:10px;">${o.chakra_note}</p>` : ''}
+          ${(o.chakra_sources && o.chakra_sources.length) ? `<p class="source-line" style="margin-top:8px;">Соответствие чакре по данным ароматерапевтической литературы — не официальные/научные данные. Источники: ${o.chakra_sources.map(k=>CHAKRA_SOURCES[k]).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label}</a>`).join(', ')}</p>` : ''}
         </div>` : ''}
 
         <div class="safety-box">

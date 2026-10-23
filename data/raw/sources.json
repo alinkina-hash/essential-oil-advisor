@@ -255,6 +255,21 @@
       "groups": [
         { "label": "Не веб-источник — предоставлено пользователем напрямую", "text": "«Эфирные масла в женском антипаразитарном курсе.pdf» и «Эфирные масла для женского здоровья.pdf». Текст воспроизведён в data/raw/kalmykova_notes.json близко к оригиналу, без додумывания оборванных фрагментов." }
       ]
+    },
+    {
+      "title": "5. Соответствие маслов чакрам",
+      "groups": [
+        {
+          "label": "Источники по чакрам",
+          "links": [
+            { "url": "https://satyori.com/chakras/oil-guide/", "note": "Complete Guide to Chakra Aromatherapy" },
+            { "url": "https://zannakeithley.com/essential-oils-for-chakras/", "note": "A Guide To Essential Oils For Chakras" },
+            { "url": "https://www.tisserand.com/blogs/all-blog-articles/chakra-balancing-with-essential-oils", "note": "Chakra balancing with essential oils (Tisserand Aromatherapy)" },
+            { "url": "https://www.perfectpotion.com.au/harmony-blend.html", "note": "Harmony Solar Plexus Chakra Essential Oil Blend — источник для Грейпфрута" }
+          ]
+        }
+      ],
+      "caveat": "Соответствие эфирных масел чакрам — это традиционная практика велнес-ароматерапии, а не научно подтверждённые данные; разные источники по чакрам заметно расходятся между собой. В карточках указаны чакры, которые подтверждаются минимум одним из перечисленных источников (обычно 2-3 источниками одновременно). Для масел, где источники не совпадали между собой или совпадение не нашлось (например, Майоран, Голубая пижма), чакра не указана. Исключение — Пало Санто (Kundalini Aroma): его соответствие чакрам взято не отсюда, а напрямую с официальной страницы производителя (см. раздел 2)."
     }
   ]
 }
