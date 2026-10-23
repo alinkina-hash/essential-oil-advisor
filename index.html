@@ -634,31 +634,12 @@
   .use-points li:last-child{ margin-bottom:0; }
   .use-points li::marker{ color:var(--ink-soft); }
 
-  .chakra-row{ display:flex; flex-wrap:wrap; gap:14px 20px; }
-  .chakra-item{ display:flex; align-items:center; gap:9px; }
+  .chakra-row{ display:flex; flex-wrap:wrap; gap:14px 22px; }
+  .chakra-item{ display:flex; align-items:center; gap:10px; }
   .chakra-label{ font-size:14px; }
   .chakra-label i{ font-style:italic; color:var(--ink-soft); }
-  .chakra-icon{ width:18px; height:18px; flex-shrink:0; position:relative; display:inline-block; }
-  .chakra-icon.root{ background:var(--c); border-radius:3px; }
-  .chakra-icon.sacral{ background:var(--c); border-radius:50%; }
-  .chakra-icon.solar-plexus{ background:var(--c); clip-path:polygon(50% 0%, 0% 100%, 100% 100%); }
-  .chakra-icon.heart{ background:none; }
-  .chakra-icon.heart::before,
-  .chakra-icon.heart::after{
-    content:''; position:absolute; inset:0; background:var(--c);
-    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-  .chakra-icon.heart::after{ transform:rotate(180deg); }
-  .chakra-icon.throat{ border-radius:50%; border:4px solid var(--c); box-sizing:border-box; }
-  .chakra-icon.third-eye{ background:var(--c); border-radius:50%; }
-  .chakra-icon.third-eye::after{
-    content:''; position:absolute; top:50%; left:50%; width:6px; height:6px;
-    margin:-3px 0 0 -3px; background:var(--surface); border-radius:50%;
-  }
-  .chakra-icon.crown{ background:var(--c); border-radius:50%; }
-  .chakra-icon.crown::before{
-    content:''; position:absolute; inset:-4px; border-radius:50%; background:var(--c); opacity:0.25;
-  }
+  .chakra-icon{ width:30px; height:30px; flex-shrink:0; display:inline-flex; }
+  .chakra-icon svg{ width:100%; height:100%; }
 
   .safety-box{
     background:var(--warn-soft);
@@ -941,14 +922,43 @@
   };
 
   const CHAKRAS = {
-    'root':         { name_ru:'Корневая',             sanskrit:'Муладхара',   color:'#C0392B' },
-    'sacral':       { name_ru:'Сакральная',           sanskrit:'Свадхистхана', color:'#E07B23' },
-    'solar-plexus': { name_ru:'Солнечное сплетение',  sanskrit:'Манипура',    color:'#D4AC0D' },
-    'heart':        { name_ru:'Сердечная',            sanskrit:'Анахата',     color:'#4C9A6B' },
-    'throat':       { name_ru:'Горловая',             sanskrit:'Вишуддха',    color:'#3B82C4' },
-    'third-eye':    { name_ru:'Третий глаз',          sanskrit:'Аджна',       color:'#5B4B8A' },
-    'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',   color:'#8E6FB0' }
+    'root':         { name_ru:'Корневая',             sanskrit:'Муладхара',    color:'#C0392B', petals:4,  center:'square' },
+    'sacral':       { name_ru:'Сакральная',           sanskrit:'Свадхистхана', color:'#E07B23', petals:6,  center:'crescent' },
+    'solar-plexus': { name_ru:'Солнечное сплетение',  sanskrit:'Манипура',     color:'#D4AC0D', petals:10, center:'triangle-up' },
+    'heart':        { name_ru:'Сердечная',            sanskrit:'Анахата',      color:'#4C9A6B', petals:12, center:'hexagram' },
+    'throat':       { name_ru:'Горловая',             sanskrit:'Вишуддха',     color:'#3B82C4', petals:16, center:'circle-triangle' },
+    'third-eye':    { name_ru:'Третий глаз',          sanskrit:'Аджна',        color:'#5B4B8A', petals:2,  center:'triangle-dot' },
+    'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',    color:'#8E6FB0', petals:24, center:'dot' }
   };
+
+  function chakraCenterSVG(type){
+    switch(type){
+      case 'square': return '<rect x="44" y="44" width="12" height="12" fill="none" stroke="#fff" stroke-width="2"/>';
+      case 'crescent': return '<path d="M54,41 a10,10 0 1,0 0,18 a7.2,7.2 0 1,1 0,-18 Z" fill="#fff"/>';
+      case 'triangle-up': return '<path d="M50,40 L60,58 L40,58 Z" fill="none" stroke="#fff" stroke-width="2"/>';
+      case 'hexagram': return '<path d="M50,38 L59,54 L41,54 Z" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M50,62 L41,46 L59,46 Z" fill="none" stroke="#fff" stroke-width="1.6"/>';
+      case 'circle-triangle': return '<circle cx="50" cy="50" r="9" fill="none" stroke="#fff" stroke-width="2"/><path d="M50,46 L55,54 L45,54 Z" fill="#fff"/>';
+      case 'triangle-dot': return '<path d="M50,43 L58,57 L42,57 Z" fill="none" stroke="#fff" stroke-width="2"/><circle cx="50" cy="51.5" r="2" fill="#fff"/>';
+      case 'dot': return '<circle cx="50" cy="50" r="5" fill="#fff"/>';
+      default: return '';
+    }
+  }
+
+  function chakraSVG(id){
+    const c = CHAKRAS[id];
+    if(!c) return '';
+    const n = c.petals;
+    const many = n > 16;
+    const rOffset = many ? 22 : 28;
+    const petalLen = many ? 12 : (n<=4 ? 20 : 17);
+    const petalWidth = many ? 4 : (n<=4 ? 11 : 7);
+    let petals = '';
+    for(let i=0;i<n;i++){
+      const angle = (360/n)*i;
+      petals += `<ellipse cx="50" cy="${50-rOffset}" rx="${petalWidth/2}" ry="${petalLen/2}" transform="rotate(${angle} 50 50)" fill="${c.color}"/>`;
+    }
+    return `<svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">${petals}<circle cx="50" cy="50" r="13" fill="${c.color}"/>${chakraCenterSVG(c.center)}</svg>`;
+  }
 
   const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
   const oils = OILS_DATA.oils;
@@ -1060,7 +1070,7 @@
     if(!c) return '';
     return `
       <div class="chakra-item">
-        <span class="chakra-icon ${id}" style="--c:${c.color}"></span>
+        <span class="chakra-icon">${chakraSVG(id)}</span>
         <span class="chakra-label">${c.name_ru} <i>(${c.sanskrit})</i></span>
       </div>`;
   }
