@@ -931,15 +931,16 @@
     'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',    color:'#8E6FB0', petals:24, center:'dot' }
   };
 
-  function chakraCenterSVG(type){
+  function chakraCenterSVG(type, color){
+    const s = `stroke="${color}" stroke-width="1.8" fill="none"`;
     switch(type){
-      case 'square': return '<rect x="44" y="44" width="12" height="12" fill="none" stroke="#fff" stroke-width="2"/>';
-      case 'crescent': return '<path d="M54,41 a10,10 0 1,0 0,18 a7.2,7.2 0 1,1 0,-18 Z" fill="#fff"/>';
-      case 'triangle-up': return '<path d="M50,40 L60,58 L40,58 Z" fill="none" stroke="#fff" stroke-width="2"/>';
-      case 'hexagram': return '<path d="M50,38 L59,54 L41,54 Z" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M50,62 L41,46 L59,46 Z" fill="none" stroke="#fff" stroke-width="1.6"/>';
-      case 'circle-triangle': return '<circle cx="50" cy="50" r="9" fill="none" stroke="#fff" stroke-width="2"/><path d="M50,46 L55,54 L45,54 Z" fill="#fff"/>';
-      case 'triangle-dot': return '<path d="M50,43 L58,57 L42,57 Z" fill="none" stroke="#fff" stroke-width="2"/><circle cx="50" cy="51.5" r="2" fill="#fff"/>';
-      case 'dot': return '<circle cx="50" cy="50" r="5" fill="#fff"/>';
+      case 'square': return `<rect x="43" y="43" width="14" height="14" ${s}/>`;
+      case 'crescent': return `<path d="M55,40 a11,11 0 1,0 0,20 a8,8 0 1,1 0,-20 Z" ${s} stroke-linejoin="round"/>`;
+      case 'triangle-up': return `<path d="M50,39 L61,59 L39,59 Z" ${s} stroke-linejoin="round"/>`;
+      case 'hexagram': return `<path d="M50,37 L60,55 L40,55 Z" ${s} stroke-linejoin="round"/><path d="M50,63 L40,45 L60,45 Z" ${s} stroke-linejoin="round"/>`;
+      case 'circle-triangle': return `<circle cx="50" cy="50" r="10" ${s}/><path d="M50,45 L54.5,53 L45.5,53 Z" fill="${color}"/>`;
+      case 'triangle-dot': return `<path d="M50,42 L59,58 L41,58 Z" ${s} stroke-linejoin="round"/><circle cx="50" cy="52" r="2.2" fill="${color}"/>`;
+      case 'dot': return `<circle cx="50" cy="50" r="5" fill="${color}"/>`;
       default: return '';
     }
   }
@@ -949,15 +950,15 @@
     if(!c) return '';
     const n = c.petals;
     const many = n > 16;
-    const rOffset = many ? 22 : 28;
-    const petalLen = many ? 12 : (n<=4 ? 20 : 17);
-    const petalWidth = many ? 4 : (n<=4 ? 11 : 7);
+    const rOffset = many ? 24 : 30;
+    const petalLen = many ? 13 : (n<=4 ? 21 : 18);
+    const petalWidth = many ? 5 : (n<=4 ? 12 : 8);
     let petals = '';
     for(let i=0;i<n;i++){
       const angle = (360/n)*i;
-      petals += `<ellipse cx="50" cy="${50-rOffset}" rx="${petalWidth/2}" ry="${petalLen/2}" transform="rotate(${angle} 50 50)" fill="${c.color}"/>`;
+      petals += `<ellipse cx="50" cy="${50-rOffset}" rx="${petalWidth/2}" ry="${petalLen/2}" transform="rotate(${angle} 50 50)" fill="none" stroke="${c.color}" stroke-width="1.4"/>`;
     }
-    return `<svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">${petals}<circle cx="50" cy="50" r="13" fill="${c.color}"/>${chakraCenterSVG(c.center)}</svg>`;
+    return `<svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">${petals}<circle cx="50" cy="50" r="14" fill="none" stroke="${c.color}" stroke-width="1.4"/>${chakraCenterSVG(c.center, c.color)}</svg>`;
   }
 
   const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
