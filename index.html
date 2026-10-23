@@ -634,6 +634,32 @@
   .use-points li:last-child{ margin-bottom:0; }
   .use-points li::marker{ color:var(--ink-soft); }
 
+  .chakra-row{ display:flex; flex-wrap:wrap; gap:14px 20px; }
+  .chakra-item{ display:flex; align-items:center; gap:9px; }
+  .chakra-label{ font-size:14px; }
+  .chakra-label i{ font-style:italic; color:var(--ink-soft); }
+  .chakra-icon{ width:18px; height:18px; flex-shrink:0; position:relative; display:inline-block; }
+  .chakra-icon.root{ background:var(--c); border-radius:3px; }
+  .chakra-icon.sacral{ background:var(--c); border-radius:50%; }
+  .chakra-icon.solar-plexus{ background:var(--c); clip-path:polygon(50% 0%, 0% 100%, 100% 100%); }
+  .chakra-icon.heart{ background:none; }
+  .chakra-icon.heart::before,
+  .chakra-icon.heart::after{
+    content:''; position:absolute; inset:0; background:var(--c);
+    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  .chakra-icon.heart::after{ transform:rotate(180deg); }
+  .chakra-icon.throat{ border-radius:50%; border:4px solid var(--c); box-sizing:border-box; }
+  .chakra-icon.third-eye{ background:var(--c); border-radius:50%; }
+  .chakra-icon.third-eye::after{
+    content:''; position:absolute; top:50%; left:50%; width:6px; height:6px;
+    margin:-3px 0 0 -3px; background:var(--surface); border-radius:50%;
+  }
+  .chakra-icon.crown{ background:var(--c); border-radius:50%; }
+  .chakra-icon.crown::before{
+    content:''; position:absolute; inset:-4px; border-radius:50%; background:var(--c); opacity:0.25;
+  }
+
   .safety-box{
     background:var(--warn-soft);
     border:1px solid var(--warn);
@@ -914,6 +940,16 @@
     'palmarosa':'Пальмароза','cinnamon-leaf':'Корица (лист)'
   };
 
+  const CHAKRAS = {
+    'root':         { name_ru:'Корневая',             sanskrit:'Муладхара',   color:'#C0392B' },
+    'sacral':       { name_ru:'Сакральная',           sanskrit:'Свадхистхана', color:'#E07B23' },
+    'solar-plexus': { name_ru:'Солнечное сплетение',  sanskrit:'Манипура',    color:'#D4AC0D' },
+    'heart':        { name_ru:'Сердечная',            sanskrit:'Анахата',     color:'#4C9A6B' },
+    'throat':       { name_ru:'Горловая',             sanskrit:'Вишуддха',    color:'#3B82C4' },
+    'third-eye':    { name_ru:'Третий глаз',          sanskrit:'Аджна',       color:'#5B4B8A' },
+    'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',   color:'#8E6FB0' }
+  };
+
   const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
   const oils = OILS_DATA.oils;
   const safety = OILS_DATA.general_safety;
@@ -1017,6 +1053,16 @@
     const points = splitToPoints(text);
     if(points.length<=1) return `<p>${text}</p>`;
     return `<ul class="use-points">${points.map(pt=>`<li>${pt}</li>`).join('')}</ul>`;
+  }
+
+  function chakraItemHTML(id){
+    const c = CHAKRAS[id];
+    if(!c) return '';
+    return `
+      <div class="chakra-item">
+        <span class="chakra-icon ${id}" style="--c:${c.color}"></span>
+        <span class="chakra-label">${c.name_ru} <i>(${c.sanskrit})</i></span>
+      </div>`;
   }
 
   function cardHTML(o){
@@ -1182,6 +1228,15 @@
           <span class="eyebrow">Внутрь</span>
           ${pointsHTML(o.internal_use)}
         </div>
+
+        ${(o.chakras && o.chakras.length) ? `
+        <div class="section chakra-section">
+          <span class="eyebrow">Соответствие чакрам</span>
+          <div class="chakra-row">
+            ${o.chakras.map(chakraItemHTML).join('')}
+          </div>
+          ${o.chakra_note ? `<p style="margin-top:10px;">${o.chakra_note}</p>` : ''}
+        </div>` : ''}
 
         <div class="safety-box">
           <span class="eyebrow">Меры предосторожности</span>
