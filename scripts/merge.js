@@ -27,7 +27,7 @@ const inStockBlends = new Set([
 
 const oils = doterra.oils.map(o => ({
   ...o,
-  brand: 'doTERRA',
+  brand: 'doTerra',
   in_stock: inStockSingles.has(o.id) || inStockBlends.has(o.id)
 }));
 
@@ -40,7 +40,7 @@ if (!oils.some(o => o.id === 'clementine')) {
     name_ru: 'Клементин',
     latin: 'Citrus clementina',
     type: 'single',
-    brand: 'doTERRA',
+    brand: 'doTerra',
     in_stock: true,
     tags: ['энергия', 'сон', 'стресс'],
     properties: 'Сладкое, мягкое цитрусовое масло, более нежное и менее терпкое, чем Дикий апельсин или Мандарин. Используется для поднятия настроения, создания лёгкой, радостной атмосферы и как приятный аромат перед сном для всей семьи.',

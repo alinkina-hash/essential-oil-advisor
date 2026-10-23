@@ -13,41 +13,108 @@
           ]
         },
         {
-          "label": "Отдельные масла",
+          "label": "Отдельные масла — официальные страницы doTERRA (RU)",
           "links": [
-            { "url": "https://www.doterra.com/US/en/p/doterra-turmeric-essential-oil", "note": "Куркума" },
-            { "url": "https://www.doterra.com/US/en/blog/spotlight-turmeric-oil", "note": "Куркума" },
-            { "url": "https://www.doterra.com/US/en/p/doterra-green-mandarin", "note": "Зелёный мандарин" },
-            { "url": "https://www.doterra.com/US/en/litsea-oil", "note": "Литсея" },
-            { "url": "https://www.doterra.com/US/en/education/pe/doterra-pink-pepper", "note": "Розовый перец" },
-            { "url": "https://www.doterra.com/US/en/hojas-informativas-de-productos", "note": "испанский каталог — подтверждение Dill = «Eneldo»" }
+            { "url": "https://www.doterra.com/RU/ru_RU/p/arborvitae-oil", "note": "Арборвитае (Туя)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/basil-oil", "note": "Базилик" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/bergamot-oil", "note": "Бергамот" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/black-pepper-oil", "note": "Чёрный перец" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/blue-tansy-oil", "note": "Голубая пижма (Танацетум)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cardamom-oil", "note": "Кардамон" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cassia-oil", "note": "Кассия" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cedarwood-oil", "note": "Кедр" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cilantro-oil", "note": "Кинза" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cinnamon-bark-oil", "note": "Корица" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/clary-sage-oil", "note": "Шалфей мускатный" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/clove-oil", "note": "Гвоздика" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/copaiba-oil", "note": "Копайфера (Копаиба)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/coriander-oil", "note": "Кориандр" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cypress-oil", "note": "Кипарис" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/douglas-fir-oil", "note": "Дугласия (Пихта Дугласа)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/eucalyptus-oil", "note": "Эвкалипт" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/frankincense-oil", "note": "Ладан (Босвеллия)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/geranium-oil", "note": "Герань" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/ginger-oil", "note": "Имбирь" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/grapefruit-oil", "note": "Грейпфрут" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/green-mandarin-oil", "note": "Зелёный мандарин" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/helichrysum-oil", "note": "Бессмертник (Гелихризум)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/jasmine-oil", "note": "Жасмин" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/juniper-berry-oil", "note": "Можжевельник" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/lavender-oil", "note": "Лаванда" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/lemon-oil", "note": "Лимон" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/lemongrass-oil", "note": "Лемонграсс" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/lime-oil", "note": "Лайм" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/marjoram-oil", "note": "Майоран" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/tea-tree-oil", "note": "Мелалеука (Чайное дерево)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/melissa-oil", "note": "Мелисса" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/myrrh-oil", "note": "Мирра" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/neroli-touch-oil", "note": "Нероли" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/oregano-oil", "note": "Орегано (Душица)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/patchouli-oil", "note": "Пачули" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/peppermint-oil", "note": "Мята перечная" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/petitgrain-oil", "note": "Петитгрейн" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/pink-pepper-oil", "note": "Розовый перец" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/roman-chamomile-oil", "note": "Ромашка римская" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/rose-oil", "note": "Роза" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/rosemary-oil", "note": "Розмарин" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/sandalwood-oil", "note": "Сандаловое дерево" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/siberian-fir-oil", "note": "Пихта сибирская" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/spearmint-oil", "note": "Мята курчавая (Спирминт)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/spikenard-oil", "note": "Нард (Спикенард)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/tangerine-oil", "note": "Мандарин" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/thyme-oil", "note": "Тимьян (Чабрец)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/turmeric-oil", "note": "Куркума" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/vetiver-oil", "note": "Ветивер" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/wild-orange-oil", "note": "Дикий апельсин" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/wintergreen-oil", "note": "Грушанка (Винтергрин)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/ylang-ylang-oil", "note": "Иланг-иланг" }
           ]
         },
         {
-          "label": "Составы смесей — официальные страницы doTERRA",
-          "text": "On Guard, Breathe, Balance, AromaTouch, Deep Blue, DigestZen — через страницы AromaTouch Technique и product education на doterra.com."
+          "label": "Составы смесей — официальные страницы doTERRA (RU)",
+          "links": [
+            { "url": "https://www.doterra.com/RU/ru_RU/p/aromatouch-oil", "note": "АромаТач (Массажный бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/balance-oil", "note": "Баланс (Заземляющий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/breathe-oil", "note": "Бриз (Дыхательный бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/cheer-oil", "note": "Чир (Бленд бодрости и оптимизма)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/citrus-bliss-oil", "note": "Цитрус Блисс (Бодрящий цитрусовый бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/clarycalm-oil", "note": "КлариКалм (Женский бленд для цикла)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/console-oil", "note": "Консоль (Утешающий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/deep-blue-oil", "note": "Дип Блю (Успокаивающий бленд для мышц)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/digestzen-oil", "note": "ДайджестЗен (Пищеварительный бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/forgive-oil", "note": "Форгив (Обновляющий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/intune-oil", "note": "ИнТюн (Бленд для концентрации)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/motivate-oil", "note": "Мотивейт (Вдохновляющий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/on-guard-oil", "note": "Он Гард (Защитный бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/passion-oil", "note": "Пэшн (Вдохновляющий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/purify-oil", "note": "Пьюрифай (Очищающий бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/doterra-serenity-oil", "note": "Серенити (Бленд для спокойного сна)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/whisper-touch-oil", "note": "Виспер (Женский парфюмерный бленд)" },
+            { "url": "https://www.doterra.com/RU/ru_RU/p/zendocrine-oil", "note": "Зендокрин (Детокс-бленд)" }
+          ]
         },
         {
-          "label": "Составы смесей, дополненные сторонними источниками (официальный PDF не читался как текст)",
+          "label": "Составы смесей, дополненные сторонними источниками (официальная RU-страница не найдена)",
           "links": [
-            { "url": "https://lovingessentialoils.com/a/blog/doterra-essential-oil-blends", "note": "Серенити, Мотивейт, Чир, Консоль, ИнТюн, Форгив, Пэшн" },
             { "url": "https://lovingessentialoils.com/a/blog/elevation-essential-oil-blend-ingredients", "note": "Элевейшн" },
             { "url": "https://incidecoder.com/products/doterra-hd-clear-topical-blend", "note": "HD Clear" }
           ]
         }
       ],
-      "caveat": "Для Whisper, Citrus Bliss, Purify, Elevation, Zendocrine, HD Clear официальные PDF doTERRA не всегда открывались как читаемый текст — составы смесей собраны с опорой на сторонние источники наравне с сайтом doTERRA."
+      "caveat": "Все масла и бленды выше перепроверены по официальным страницам doTERRA RU (www.doterra.com/RU/ru_RU) — составы блендов и описания скорректированы по русскоязычным разделам «Ингредиенты»/«Описание». Для Elevation и HD Clear официальная RU-страница не найдена (сайт отдаёт ошибку) — составы для них собраны по сторонним источникам. Для Дилла (Dill), Фенхеля, Литсеи и Магнолии официальная страница на доterra.com/RU также не найдена — для этих масел сохранены ранее собранные данные без RU-подтверждения."
     },
     {
       "title": "2. Kundalini Aroma (Пало Санто, Шалфей, Чампака)",
       "groups": [
         {
+          "label": "Официальные страницы Kundalini Aroma",
+          "links": [
+            { "url": "https://kundaliniaroma.com/product/palo-santo-oil/", "note": "Пало Санто" }
+          ]
+        },
+        {
           "label": "",
           "links": [
-            { "url": "https://www.aromaweb.com/essential-oils/palo-santo-essential-oil.php", "note": "Пало Санто" },
-            { "url": "https://www.edenbotanicals.com/palo-santo.html", "note": "Пало Санто" },
-            { "url": "https://ecuadorianhands.com/en/blog/post/palo-santo-oil-uses-and-benefits.html", "note": "Пало Санто" },
-            { "url": "https://www.sourcevital.com/products/palo-santo-essential-oil", "note": "Пало Санто" },
             { "url": "https://aromathera.org/the-ultimate-guide-to-champaca-essential-oil-benefits-and-uses/", "note": "Чампака" },
             { "url": "https://www.floramedicalglobal.com/blog/champaka-complete-guide", "note": "Чампака" },
             { "url": "https://www.webmd.com/vitamins/ai/ingredientmono-504/sage", "note": "Шалфей — безопасность" },
@@ -57,7 +124,7 @@
           ]
         }
       ],
-      "caveat": "У бренда Kundalini Aroma нет собственного проверяемого веб-присутствия, поэтому источники — по самим растениям, не по бренду."
+      "caveat": "Пало Санто проверено и обновлено по официальной странице производителя kundaliniaroma.com. Для Шалфея и Чампаки официальная страница бренда пока не проверена — источники по ним собраны по самим растениям, не по бренду."
     },
     {
       "title": "3. Дополнительные растения от травницы (не из каталога doTERRA)",

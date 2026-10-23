@@ -22,6 +22,8 @@
     --blog:#7C5A8C;
     --blog-soft:#EBE1EE;
     --focus:#3D6BD1;
+    --disclaimer-green:#2F5233;
+    --disclaimer-green-bg:#EAF3EA;
     --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 26px rgba(0,0,0,0.08);
   }
   @media (prefers-color-scheme: dark){
@@ -42,6 +44,8 @@
       --blog:#CBA3D8;
       --blog-soft:#362A3D;
       --focus:#8AAAF2;
+      --disclaimer-green:#8FBC94;
+      --disclaimer-green-bg:#1E2B1D;
       --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
     }
   }
@@ -62,6 +66,8 @@
     --blog:#CBA3D8;
     --blog-soft:#362A3D;
     --focus:#8AAAF2;
+    --disclaimer-green:#8FBC94;
+    --disclaimer-green-bg:#1E2B1D;
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
   }
 
@@ -434,7 +440,6 @@
     font-family:'IBM Plex Mono',monospace;
     font-size:10px;
     letter-spacing:0.07em;
-    text-transform:uppercase;
     color:var(--ink-soft);
   }
   .stock-dot{
@@ -578,6 +583,7 @@
   /* Detail view */
   .detail{
     max-width:620px;
+    padding-bottom:48px;
   }
   .detail.safety-view{
     max-width:840px;
@@ -686,7 +692,9 @@
   }
   .safety-block h3{ font-size:15px; margin-bottom:8px; }
   .safety-block p{ margin:0; font-size:14.5px; color:var(--ink); }
-  .safety-block p.disclaimer-text{ color:var(--ink-soft); }
+  .safety-block p.disclaimer-text{ color:#c7c7c7; }
+  .safety-block.disclaimer-block{ border-color:var(--disclaimer-green); background:var(--disclaimer-green-bg); }
+  .safety-block.disclaimer-block p.disclaimer-text{ color:var(--ink-soft); }
   .safety-block h3.source-section-title{ color:var(--amber); font-size:19px; }
   .safety-block .oils-list{
     font-family:'IBM Plex Mono',monospace;
@@ -897,7 +905,9 @@
     'caraway':'Тмин','star-anise':'Бадьян','lemon-myrtle':'Лимонный мирт','nutmeg':'Мускатный орех',
     'vanilla':'Ваниль','labdanum':'Лабданум','amyris':'Амирис','lavandin':'Лавандин',
     'yuzu':'Юдзу','citronella':'Цитронелла','black-cumin':'Чёрный тмин','ho-wood':'Хо-дерево',
-    'damiana':'Дамиана'
+    'damiana':'Дамиана','tonka':'Тонка','cocoa':'Какао','osmanthus':'Османтус',
+    'michelia-alba':'Белая чампака','mandarin':'Мандарин','german-chamomile':'Ромашка аптечная (голубая)',
+    'palmarosa':'Пальмароза','cinnamon-leaf':'Корица (лист)'
   };
 
   const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
@@ -1116,7 +1126,7 @@
     return `
       <div class="detail">
         <button class="back-btn" id="backBtn">← Назад к каталогу</button>
-        <div class="detail-head">
+        <div class="detail-head"${o.brand!=='doTerra'?' style="margin-bottom:18px;"':''}>
           <span class="brand-tag">${o.brand}</span>
           <h2>${o.name_ru}<span class="latin">${o.latin}</span></h2>
           <div class="tag-row" style="margin-top:10px;">
@@ -1126,6 +1136,7 @@
           <div class="flag-row" style="margin-top:12px;">${allCautionFlagsHTML(o, false)}</div>
           ${usageBadgesHTML(o, true)}
           ${o.usage_icons_source?`<p class="source-line" style="margin-top:8px;">Значки применения — <a href="${o.usage_icons_source}" target="_blank" rel="noopener">doterra.com</a></p>`:''}
+          ${o.source_url?`<p class="source-line" style="margin-top:8px;">Источник — <a href="${o.source_url}" target="_blank" rel="noopener">${new URL(o.source_url).hostname.replace(/^www\./,'')}</a></p>`:''}
         </div>
 
         ${o.not_a_typical_eo ? `
@@ -1368,7 +1379,7 @@
         <button class="back-btn" id="backBtn">← Назад к каталогу</button>
         <h2>Источники</h2>
         <p class="lead">${sourcesData.intro}</p>
-        <div class="safety-block">
+        <div class="safety-block disclaimer-block">
           <h3>Дисклеймер</h3>
           <p class="disclaimer-text">${safety.general_disclaimer}</p>
         </div>
