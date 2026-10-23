@@ -405,6 +405,13 @@
     border-color:var(--blog);
     color:var(--blog);
   }
+  .chakra-chips{ margin-top:2px; }
+  .chip.chakra-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .chip.chakra-chip img{ width:16px; height:16px; object-fit:contain; flex-shrink:0; }
 
   .count-line{
     font-size:13px;
@@ -933,7 +940,7 @@
     'crown':        { name_ru:'Коронная',             sanskrit:'Сахасрара',    color:'#8E6FB0', file:'assets/chakras/crown.png' }
   };
 
-  const state = { query:'', tag:'all', hormoneSub:'all', onlyStock:true, view:'grid', activeId:null };
+  const state = { query:'', tag:'all', hormoneSub:'all', chakra:'all', onlyStock:true, view:'grid', activeId:null };
   const oils = OILS_DATA.oils;
   const safety = OILS_DATA.general_safety;
   const kalmykova = OILS_DATA.kalmykova_notes;
@@ -956,6 +963,11 @@
       return (o.hormone_notes_kalmykova||[]).some(hn=>hn.hormone===state.hormoneSub);
     }
     return true;
+  }
+
+  function matchesChakra(o){
+    if(state.chakra==='all') return true;
+    return (o.chakras||[]).includes(state.chakra);
   }
 
   const app = document.getElementById('app');
@@ -1018,6 +1030,13 @@
           <button class="chip sub ${state.hormoneSub==='all'?'active':''}" data-hormone="all">Все гормоны</button>
           ${hormoneSubs.map(h=>`<button class="chip sub ${state.hormoneSub===h?'active':''}" data-hormone="${escapeAttr(h)}">${h}</button>`).join('')}
         </div>` : ''}
+        <div class="chips chakra-chips" id="chakraChips">
+          <button class="chip ${state.chakra==='all'?'active':''}" data-chakra="all">Все чакры</button>
+          ${Object.entries(CHAKRAS).map(([id,c])=>`
+            <button class="chip chakra-chip ${state.chakra===id?'active':''}" data-chakra="${id}">
+              <img src="${c.file}" alt="">${c.name_ru}
+            </button>`).join('')}
+        </div>
       </div>`;
   }
 
@@ -1130,6 +1149,7 @@
     const filtered = oils.filter(o=>
       matchesSearch(o,state.query) &&
       matchesTag(o) &&
+      matchesChakra(o) &&
       (!state.onlyStock || o.in_stock)
     );
     const cards = filtered.map(cardHTML).join('');
@@ -1493,6 +1513,15 @@
         render(true);
       });
     }
+    const chakraChips = document.getElementById('chakraChips');
+    if(chakraChips){
+      chakraChips.addEventListener('click', e=>{
+        const btn = e.target.closest('.chip');
+        if(!btn) return;
+        state.chakra = btn.dataset.chakra;
+        render(true);
+      });
+    }
     document.querySelectorAll('.card').forEach(c=>{
       c.addEventListener('click', ()=>{ state.view='detail'; state.activeId=c.dataset.id; render(); });
     });
@@ -1511,6 +1540,7 @@
     const filtered = oils.filter(o=>
       matchesSearch(o,state.query) &&
       matchesTag(o) &&
+      matchesChakra(o) &&
       (!state.onlyStock || o.in_stock)
     );
     const countEl = document.querySelector('.count-line');
