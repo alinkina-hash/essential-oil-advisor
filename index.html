@@ -629,6 +629,10 @@
     display:block;
   }
   .section p{ margin:0; font-size:15px; }
+  .use-points{ margin:0; padding-left:20px; }
+  .use-points li{ font-size:15px; line-height:1.5; margin-bottom:8px; }
+  .use-points li:last-child{ margin-bottom:0; }
+  .use-points li::marker{ color:var(--ink-soft); }
 
   .safety-box{
     background:var(--warn-soft);
@@ -1000,6 +1004,21 @@
 
   function escapeAttr(s){ return String(s).replace(/"/g,'&quot;'); }
 
+  function splitToPoints(text){
+    if(!text) return [];
+    return text
+      .split(/;\s*/)
+      .flatMap(seg => seg.split(/(?<=\.)\s+(?=[А-ЯЁA-Z])/))
+      .map(s=>s.trim())
+      .filter(Boolean);
+  }
+
+  function pointsHTML(text){
+    const points = splitToPoints(text);
+    if(points.length<=1) return `<p>${text}</p>`;
+    return `<ul class="use-points">${points.map(pt=>`<li>${pt}</li>`).join('')}</ul>`;
+  }
+
   function cardHTML(o){
     return `
       <button class="card" data-id="${o.id}">
@@ -1153,15 +1172,15 @@
         </div>
         <div class="section">
           <span class="eyebrow">Ароматически</span>
-          <p>${o.aromatic_use}</p>
+          ${pointsHTML(o.aromatic_use)}
         </div>
         <div class="section">
           <span class="eyebrow">На кожу</span>
-          <p>${o.topical_use}</p>
+          ${pointsHTML(o.topical_use)}
         </div>
         <div class="section">
           <span class="eyebrow">Внутрь</span>
-          <p>${o.internal_use}</p>
+          ${pointsHTML(o.internal_use)}
         </div>
 
         <div class="safety-box">
