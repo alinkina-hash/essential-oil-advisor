@@ -522,6 +522,7 @@
   .usage-badge.N{ background:var(--focus); }
   .usage-row.detail{ gap:8px; margin:14px 0 0; }
   .usage-row.detail .usage-badge{ width:26px; height:26px; font-size:12px; }
+  .source-line{ font-size:12px; color:var(--ink-soft); }
 
   .usage-legend{
     margin:36px 0 8px;
@@ -1231,7 +1232,7 @@
           ${o.in_stock?'<div class="stock-line"><span class="stock-dot"></span> Есть в твоей коллекции</div>':''}
           <div class="flag-row" style="margin-top:12px;">${allCautionFlagsHTML(o, false)}</div>
           ${usageBadgesHTML(o, true)}
-          ${o.usage_icons_source?`<p class="source-line" style="margin-top:8px;">Значки применения — <a href="${o.usage_icons_source}" target="_blank" rel="noopener">doterra.com</a></p>`:''}
+          ${o.usage_icons_source?`<p class="source-line" style="margin-top:4px;">Значки применения — <a href="${o.usage_icons_source}" target="_blank" rel="noopener">doterra.com</a></p>`:''}
           ${o.source_url?`<p class="source-line" style="margin-top:8px;">Источник — <a href="${o.source_url}" target="_blank" rel="noopener">${new URL(o.source_url).hostname.replace(/^www\./,'')}</a></p>`:''}
         </div>
 
